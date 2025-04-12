@@ -1,147 +1,80 @@
-from transformers import pipeline
-from typing import List, Dict, Any, Optional
+import torch
+import torchaudio
+from transformers import Wav2Vec2ForSequenceClassification, Wav2Vec2FeatureExtractor
+from typing import Dict, Any, List
 import os
 
 class ModelHF:
     def __init__(self):
-        """Initialize HuggingFace pipelines for audio and text analysis"""
-        api_key = os.getenv("HF_API_KEY")
-        if not api_key:
-            raise ValueError("HF_API_KEY environment variable is not set")
-            
-        # Initialize sentiment analysis pipeline for text
-        self.sentiment_pipeline = pipeline(
-            "sentiment-analysis",
-            model="nlptown/bert-base-multilingual-uncased-sentiment",
-            token=api_key
-        )
+        """Initialize local audio event detection model"""
+        # Load pre-trained model and feature extractor
+        self.model = Wav2Vec2ForSequenceClassification.from_pretrained("superb/wav2vec2-base-superb-ks")
+        self.feature_extractor = Wav2Vec2FeatureExtractor.from_pretrained("superb/wav2vec2-base-superb-ks")
         
-        # Initialize enhanced audio analysis pipelines
-        self.audio_emotion_pipeline = pipeline(
-            "audio-classification",
-            model="ehcalabres/wav2vec2-lg-xlsr-en-speech-emotion-recognition",
-            token=api_key
-        )
+        # Audio event keywords for annotation
+        self.audio_events = {
+            0: "(!!PAUSE!!)",        # Map model outputs to your annotations
+            1: "(!!HESITATION!!)",
+            2: "(!!RAISED_VOICE!!)",
+            3: "(!!DOUBT!!)",
+            4: "(!!CONFIDENCE!!)"
+        }
         
-        self.audio_prosody_pipeline = pipeline(
-            "audio-classification",
-            model="MIT/ast-finetuned-audioset",
-            token=api_key
-        )
-        
-        self.audio_pipeline = pipeline(
-            "audio-classification",
-            model="MIT/ast-finetuned-speech-commands-v2",
-            token=api_key
-        )
+        # Set model to evaluation mode
+        self.model.eval()
 
-    def analyze_text_sentiment(self, text: str) -> Dict[str, Any]:
-        """Analyze sentiment of text using HuggingFace pipeline
-        
-        Args:
-            text (str): Text to analyze
-            
-        Returns:
-            Dict[str, Any]: Dictionary containing sentiment score and label
-            
-        Raises:
-            Exception: If there's an error during sentiment analysis
-        """
-        try:
-            result = self.sentiment_pipeline(text)[0]
-            # Convert score to percentage (0-100)
-            sentiment_score = int(float(result['score']) * 100)
-            return {
-                'sentiment': sentiment_score,
-                'label': result['label']
-            }
-        except Exception as e:
-            raise Exception(f"Error analyzing text sentiment: {str(e)}")
-
-    def analyze_audio_sentiment(self, audio_path: str) -> Dict[str, Any]:
-        """Analyze sentiment/emotion from audio using enhanced HuggingFace pipelines
+    def detect_audio_events(self, audio_path: str) -> List[Dict[str, Any]]:
+        """Detect audio events in an audio file and return annotations
         
         Args:
             audio_path (str): Path to the audio file
             
         Returns:
-            Dict[str, Any]: Dictionary containing detailed audio analysis including emotions,
-                           prosodic features, and speech characteristics
+            List[Dict]: List of dictionaries containing 'timestamp' and 'annotation'
             
         Raises:
             FileNotFoundError: If the audio file doesn't exist
-            Exception: For other processing errors
+            Exception: For processing errors
         """
-        try:
-            if not os.path.exists(audio_path):
-                raise FileNotFoundError(f"Audio file not found: {audio_path}")
+        if not os.path.exists(audio_path):
+            raise FileNotFoundError(f"Audio file not found: {audio_path}")
 
-            # Get emotion classification results
-            emotion_result = self.audio_emotion_pipeline(audio_path)
-            prosody_result = self.audio_prosody_pipeline(audio_path)
-            speech_result = self.audio_pipeline(audio_path)
-            
-            # Process emotion results
-            emotion_score = int(float(emotion_result[0]['score']) * 100)
-            
-            # Combine all analysis results
-            return {
-                'sentiment': emotion_score,
-                'emotion': {
-                    'primary': emotion_result[0]['label'],
-                    'confidence': emotion_score,
-                    'all_emotions': [
-                        {
-                            'label': r['label'],
-                            'confidence': int(float(r['score']) * 100)
-                        } for r in emotion_result
-                    ]
-                },
-                'prosody': {
-                    'features': [
-                        {
-                            'label': r['label'],
-                            'confidence': int(float(r['score']) * 100)
-                        } for r in prosody_result
-                    ]
-                },
-                'speech_characteristics': {
-                    'primary': speech_result[0]['label'],
-                    'all_characteristics': [
-                        {
-                            'label': r['label'],
-                            'confidence': int(float(r['score']) * 100)
-                        } for r in speech_result
-                    ]
-                }
-            }
-        except FileNotFoundError as e:
-            raise e
-        except Exception as e:
-            raise Exception(f"Error analyzing audio sentiment: {str(e)}")
-
-    def analyze_transcript_segments(self, segments: List[Dict[str, str]]) -> List[Dict[str, Any]]:
-        """Analyze sentiment for each segment in a transcript
-        
-        Args:
-            segments (List[Dict[str, str]]): List of transcript segments with text
-            
-        Returns:
-            List[Dict[str, Any]]: List of sentiment analysis results for each segment
-            
-        Raises:
-            Exception: If there's an error processing any segment
-        """
         try:
-            results = []
-            for segment in segments:
-                sentiment_result = self.analyze_text_sentiment(segment['text'])
-                results.append({
-                    'timestamp': segment.get('timestamp', ''),
-                    'text': segment['text'],
-                    'sentiment': sentiment_result['sentiment'],
-                    'label': sentiment_result['label']
-                })
-            return results
+            # Load and resample audio to 16000Hz
+            waveform, sample_rate = torchaudio.load(audio_path)
+            if sample_rate != 16000:
+                resampler = torchaudio.transforms.Resample(orig_freq=sample_rate, new_freq=16000)
+                waveform = resampler(waveform)
+            
+            # Process audio in chunks (e.g., 1 second windows)
+            chunk_size = 16000  # 1 second at 16kHz
+            annotations = []
+            
+            for i in range(0, waveform.shape[1], chunk_size):
+                chunk = waveform[:, i:i+chunk_size]
+                if chunk.shape[1] < chunk_size:
+                    continue  # Skip incomplete chunks
+                
+                inputs = self.feature_extractor(
+                    chunk.squeeze().numpy(),
+                    sampling_rate=16000,
+                    return_tensors="pt",
+                    padding=True
+                )
+                
+                with torch.no_grad():
+                    logits = self.model(inputs.input_values).logits
+                    predicted_class_id = torch.argmax(logits, dim=-1).item()
+                
+                if predicted_class_id in self.audio_events:
+                    timestamp = i / sample_rate
+                    annotations.append({
+                        'timestamp': timestamp,
+                        'annotation': self.audio_events[predicted_class_id],
+                        'confidence': torch.softmax(logits, dim=-1)[0][predicted_class_id].item()
+                    })
+            
+            return annotations
+            
         except Exception as e:
-            raise Exception(f"Error analyzing transcript segments: {str(e)}")
+            raise Exception(f"Error detecting audio events: {str(e)}")
