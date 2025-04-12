@@ -1,10 +1,6 @@
 import { useEffect, useState } from 'react';
-import { supabase } from '../lib/supabase';
 import { Meeting } from '../types';
-import { Database } from '../types/supabase';
-
-type MeetingRow = Database['public']['Tables']['meetings']['Row'];
-type SentimentEventRow = Database['public']['Tables']['sentiment_events']['Row'];
+import { supabase } from '../lib/supabase';
 
 export function useMeetings() {
   const [meetings, setMeetings] = useState<Meeting[]>([]);
@@ -14,34 +10,23 @@ export function useMeetings() {
   useEffect(() => {
     async function fetchMeetings() {
       try {
-        // Debug: Log Supabase client configuration
-        console.log('Supabase URL:', import.meta.env.VITE_SUPABASE_URL);
-        console.log('Supabase Anon Key:', import.meta.env.VITE_SUPABASE_ANON_KEY);
-
+        // Fetch meetings
         const { data: meetingsData, error: meetingsError } = await supabase
           .from('meetings')
           .select('*')
           .order('date', { ascending: false });
 
-        if (meetingsError) {
-          console.error('Meetings fetch error:', meetingsError);
-          throw meetingsError;
-        }
+        if (meetingsError) throw meetingsError;
 
-        console.log('Fetched meetings:', meetingsData);
-
+        // Fetch sentiment events
         const { data: sentimentData, error: sentimentError } = await supabase
           .from('sentiment_events')
           .select('*');
 
-        if (sentimentError) {
-          console.error('Sentiment events fetch error:', sentimentError);
-          throw sentimentError;
-        }
+        if (sentimentError) throw sentimentError;
 
-        console.log('Fetched sentiment events:', sentimentData);
-
-        const meetingsWithEvents = meetingsData.map((meeting: MeetingRow) => ({
+        // Transform the data to match our frontend types
+        const meetingsWithEvents = meetingsData.map((meeting) => ({
           id: meeting.id,
           clientName: meeting.client_name,
           date: meeting.date,
@@ -52,8 +37,8 @@ export function useMeetings() {
           summary: meeting.summary,
           sentiment: meeting.sentiment,
           sentimentEvents: sentimentData
-            .filter((event: SentimentEventRow) => event.meeting_id === meeting.id)
-            .map((event: SentimentEventRow) => ({
+            .filter((event) => event.meeting_id === meeting.id)
+            .map((event) => ({
               timestamp: event.timestamp,
               event: event.event,
               sentiment: event.sentiment,

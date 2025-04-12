@@ -2020,6 +2020,32 @@ __metadata:
   languageName: node
   linkType: hard
 
+"frontend@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "frontend@workspace:."
+  dependencies:
+    "@supabase/supabase-js": "npm:^2.39.3"
+    "@types/react": "npm:^18.2.43"
+    "@types/react-dom": "npm:^18.2.17"
+    "@typescript-eslint/eslint-plugin": "npm:^6.14.0"
+    "@typescript-eslint/parser": "npm:^6.14.0"
+    "@vitejs/plugin-react": "npm:^4.2.1"
+    autoprefixer: "npm:^10.4.16"
+    d3-scale: "npm:^4.0.2"
+    eslint: "npm:^8.55.0"
+    eslint-plugin-react-hooks: "npm:^4.6.0"
+    eslint-plugin-react-refresh: "npm:^0.4.5"
+    lucide-react: "npm:^0.309.0"
+    postcss: "npm:^8.4.33"
+    react: "npm:^18.2.0"
+    react-dom: "npm:^18.2.0"
+    recharts: "npm:^2.10.3"
+    tailwindcss: "npm:^3.4.1"
+    typescript: "npm:^5.2.2"
+    vite: "npm:^5.0.8"
+  languageName: unknown
+  linkType: soft
+
 "fs-minipass@npm:^3.0.0":
   version: 3.0.3
   resolution: "fs-minipass@npm:3.0.3"
@@ -3011,32 +3037,6 @@ __metadata:
   checksum: 10c0/bbe5edb944b0ad63387a1d5b1911ae93e05ce8d0f60de1035b218cdcceedfe39dbd2c697853355b70f1a090f8f58fe90da487c85216bf9671f9499d1a897e9e3
   languageName: node
   linkType: hard
-
-"project@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "project@workspace:."
-  dependencies:
-    "@supabase/supabase-js": "npm:^2.39.3"
-    "@types/react": "npm:^18.2.43"
-    "@types/react-dom": "npm:^18.2.17"
-    "@typescript-eslint/eslint-plugin": "npm:^6.14.0"
-    "@typescript-eslint/parser": "npm:^6.14.0"
-    "@vitejs/plugin-react": "npm:^4.2.1"
-    autoprefixer: "npm:^10.4.16"
-    d3-scale: "npm:^4.0.2"
-    eslint: "npm:^8.55.0"
-    eslint-plugin-react-hooks: "npm:^4.6.0"
-    eslint-plugin-react-refresh: "npm:^0.4.5"
-    lucide-react: "npm:^0.309.0"
-    postcss: "npm:^8.4.33"
-    react: "npm:^18.2.0"
-    react-dom: "npm:^18.2.0"
-    recharts: "npm:^2.10.3"
-    tailwindcss: "npm:^3.4.1"
-    typescript: "npm:^5.2.2"
-    vite: "npm:^5.0.8"
-  languageName: unknown
-  linkType: soft
 
 "promise-retry@npm:^2.0.1":
   version: 2.0.1

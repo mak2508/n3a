@@ -4,10 +4,10 @@ export interface Meeting {
   date: string;
   meetingType: string;
   description: string;
-  audioUrl?: string;
-  transcript?: string;
-  summary?: string;
-  sentiment?: number;
+  audioUrl?: string | null;
+  transcript?: string | null;
+  summary?: string | null;
+  sentiment?: number | null;
   sentimentEvents?: SentimentEvent[];
 }
 
