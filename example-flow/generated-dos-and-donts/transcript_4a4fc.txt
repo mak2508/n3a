@@ -1,0 +1,12 @@
+{
+    "dos": [
+        "Acknowledge and validate concerns calmly and empathetically (\"That\u2019s completely normal, Mrs. Johnson\").",
+        "Break down overwhelming goals into manageable steps (\"We can build toward it gradually, little by little, over the next few years\").",
+        "Emphasize collaboration and support (\"Together, we\u2019ll make sure your retirement is as stress-free and enjoyable as possible\")."
+    ],
+    "donts": [
+        "Avoid suggesting drastic changes without emphasizing gradual implementation.",
+        "Don\u2019t dismiss worries about unexpected costs; address them with pragmatic but reassuring solutions.",
+        "Avoid overly technical language that may heighten hesitation or confusion."
+    ]
+}

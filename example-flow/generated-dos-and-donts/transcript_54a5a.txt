@@ -1,0 +1,12 @@
+{
+    "dos": [
+        "Acknowledge and empathize with client concerns to build trust (\u201cI understand how you feel\u201d; \u201cYou\u2019re not alone in feeling this way\u201d).",
+        "Emphasize the client\u2019s achievements and use encouraging language (\u201cYou\u2019ve set yourself up wonderfully\u201d; \u201cYou\u2019ve worked so hard for this\u2014let\u2019s make it rewarding\u201d).",
+        "Highlight solutions to mitigate risks without inducing undue concern (\u201cWith additional safeguards, you\u2019ll have peace of mind and flexibility\u201d).",
+        "**Don\u2019ts:**",
+        "Don\u2019t inadvertently introduce excessive worry when addressing risks (\u201cunexpected expenses\u201d without reassurance might amplify doubt).",
+        "Avoid dismissing client emotions or concerns\u2014always validate feelings (\u201cThat\u2019s natural, Mrs. Thompson\u201d).",
+        "Don\u2019t use language that might feel overly technical or detached without balancing it with optimism and understanding."
+    ],
+    "donts": []
+}

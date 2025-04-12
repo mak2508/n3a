@@ -1,0 +1,12 @@
+{
+    "dos": [
+        "Acknowledge and empathize with the client's uncertainties and concerns (\"You\u2019re not alone\", \"I understand\").",
+        "Offer clear solutions and manageable steps to address worries (\"We can prioritize your immediate concerns today and build from there\").",
+        "Use reassuring language to instill confidence and optimism (\"With the right adjustments, your retirement can be as secure and fulfilling as you\u2019ve always imagined\")."
+    ],
+    "donts": [
+        "Avoid focusing exclusively on risks or concerns without offering actionable solutions (\"If the market takes a downturn, it could affect your retirement timeline\" should always follow with mitigation strategies).",
+        "Don't overcomplicate explanations or overwhelm the client with excessive detail all at once.",
+        "Avoid dismissing emotional concerns\u2014use validating and empathetic language instead."
+    ]
+}

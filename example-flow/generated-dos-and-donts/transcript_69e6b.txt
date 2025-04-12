@@ -1,0 +1,12 @@
+{
+    "dos": [
+        "Acknowledge concerns with empathy and reassure the client about long-term security (\"Planning for retirement can feel overwhelming... remember, this is about creating clarity in your future\").",
+        "Provide balanced solutions that align emotional reassurance with practical strategies (\"This approach lets you feel secure while still growing your portfolio\").",
+        "Break plans into manageable steps to reduce overwhelm (\"Let\u2019s break it down step-by-step\")."
+    ],
+    "donts": [
+        "Don't dismiss or minimize concerns about risks (\"I hate to take risks and lose what I\u2019ve worked so hard to save\").",
+        "Avoid overwhelming the client with too many options at once (\"Planning for healthcare insurance adds complexity\").",
+        "Don't rush to finalize recommendations without addressing specific anxieties and ensuring the client feels fully comfortable."
+    ]
+}

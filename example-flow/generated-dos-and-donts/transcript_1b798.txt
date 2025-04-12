@@ -1,0 +1,12 @@
+{
+    "dos": [
+        "Validate concerns with empathy and reassure the client (\u201cThat\u2019s why we\u2019re here\u2014to minimize that uncertainty\u201d).",
+        "Provide optimistic and tailored solutions (\"We can create a specific travel fund within your larger plan\").",
+        "Highlight the client's achievements and instill confidence in their progress (\"You\u2019ve worked hard for this moment\u2014we\u2019ll make sure you get the retirement you deserve\")."
+    ],
+    "donts": [
+        "Avoid using jargon without clear explanations (\"fine-tuning\" could seem unclear at first).",
+        "Don't focus overly on risk without emphasizing proactive steps to mitigate it (\"adjust your portfolio to reduce risk while still generating growth\").",
+        "Don\u2019t neglect ongoing flexibility and strategy reviews as a reassurance tool."
+    ]
+}

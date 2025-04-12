@@ -1,0 +1,12 @@
+{
+    "dos": [
+        "Acknowledge and empathize with concerns to build trust (\"That\u2019s a valid concern, and you\u2019re not alone in feeling that way\").",
+        "Reframe cautious strategies in a positive light (\"Think of it more as safeguarding your lifestyle rather than chasing uncertain gains\").",
+        "Offer flexible, personalized solutions that adapt to the client\u2019s needs (\"I\u2019ll prepare a personalized plan for you based on our discussions\")."
+    ],
+    "donts": [
+        "Don\u2019t dismiss concerns or uncertainties without addressing them thoroughly.",
+        "Avoid emphasizing trade-offs (like \u201cless growth\u201d) without pairing the explanation with benefits or emotional reassurance.",
+        "Don\u2019t overwhelm the client with rigid or one-size-fits-all strategies."
+    ]
+}

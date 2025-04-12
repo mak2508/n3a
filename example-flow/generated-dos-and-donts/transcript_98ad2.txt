@@ -1,0 +1,12 @@
+{
+    "dos": [
+        "Acknowledge client concerns with empathy and assurance (\"I hear you\").",
+        "Offer actionable and optimistic strategies to address worries (\"These changes could greatly extend your financial comfort zone\").",
+        "Reinforce positive outcomes tied to the planning process (\"Our goal is to give you stability so you can focus on enjoying your life\")."
+    ],
+    "donts": [
+        "Don't dismiss or downplay the client\u2019s fears without addressing them fully (e.g., market crashes, inflation).",
+        "Avoid overly complex explanations; focus on clarity and simplicity.",
+        "Don't make the discussion only transactional\u2014connect strategies to improving quality of life."
+    ]
+}

@@ -1,0 +1,12 @@
+{
+    "dos": [
+        "Acknowledge and validate the client's concerns empathetically (\"Your concern is completely valid\").",
+        "Offer reassuring solutions with a focus on emotional and financial security (\"We can create a special reserve just for healthcare needs\").",
+        "Incorporate aspirational ideas to inspire excitement about retirement (\"Have you thought about allocating some funds for travel or hobbies?\")."
+    ],
+    "donts": [
+        "Avoid introducing unsettling topics like inflation without explaining actionable solutions immediately (\"account for inflation and fluctuating markets\").",
+        "Don't dismiss or rush the client's hesitations about investment changes; address them sensitively (\"The changes we\u2019d make would be gradual\").",
+        "Refrain from focusing solely on numbers or technical details without linking them to positive emotional outcomes."
+    ]
+}

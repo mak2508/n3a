@@ -1,0 +1,12 @@
+{
+    "dos": [
+        "Prioritize balancing the client's concerns between growth and protection (\"We can balance growth with protection\").",
+        "Encourage the client to envision positive retirement aspirations (\"Have you thought about how you want to spend your retirement?\").",
+        "Reassure the client with solutions that include both enjoyment and security (\"With proper planning, there's room for both enjoyment and security\")."
+    ],
+    "donts": [
+        "Avoid dismissing concerns about risk; always validate the client\u2019s worries (\"You\u2019re right to think about that\").",
+        "Don't rely solely on numbers or technical projections without tying them back to emotional goals and security.",
+        "Avoid implying that the client must compromise on their dreams due to financial limitations."
+    ]
+}

@@ -1,0 +1,12 @@
+{
+    "dos": [
+        "Acknowledge and address concerns empathetically (\"The unknowns are stressful, but we\u2019re here to help you plan\").",
+        "Highlight the client\u2019s achievements to build confidence (\"You\u2019ve done a fantastic job saving so far\").",
+        "Provide solutions that emphasize proactive planning and peace of mind (\"Think of it as creating financial peace of mind\")."
+    ],
+    "donts": [
+        "Avoid dismissing or oversimplifying concerns about risks (\"Will I need to cut back on spending?\" should not be met without careful reassurance).",
+        "Don\u2019t focus solely on technical details without tying them to emotional reassurance.",
+        "Avoid overwhelming the client with complex options without explaining the benefits clearly."
+    ]
+}

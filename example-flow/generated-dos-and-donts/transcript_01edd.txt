@@ -1,0 +1,12 @@
+{
+    "dos": [
+        "Acknowledge and validate the client's concerns with empathy (\"I understand how you feel\").",
+        "Provide clear and positive reassurance tied to practical strategies (\"you\u2019re not alone in this\u2014we\u2019ll guide you every step of the way\").",
+        "Offer balanced and actionable solutions that address both growth and security (\"leaving some of your portfolio in higher-growth investments ensures steady growth while maintaining the safety net\")."
+    ],
+    "donts": [
+        "Avoid dismissing or skimming over concerns about uncertainties (\"what if my savings run out?\").",
+        "Don't overwhelm the client with too much technical jargon or overly complex explanations.",
+        "Avoid rushing the discussion without allowing the client to express their worries and feel reassured."
+    ]
+}

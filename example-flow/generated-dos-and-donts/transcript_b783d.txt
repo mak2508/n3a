@@ -1,0 +1,12 @@
+{
+    "dos": [
+        "Acknowledge and empathize with the client's concerns (\"I completely understand why that\u2019s on your mind.\")",
+        "Offer realistic optimism by addressing worries while highlighting solutions (\"The changes we\u2019d make now reduce the chance you\u2019d ever need to take drastic measures.\")",
+        "Balance financial goals with personal values (\"With a comprehensive plan, we can aim to strike a balance between your living comfort and creating a legacy for your children.\")"
+    ],
+    "donts": [
+        "Don't dismiss or downplay the client\u2019s worries (\"But that\u2019s why we build a cushion\u2014it\u2019s for peace of mind\" shows addressing them sincerely instead).",
+        "Avoid suggesting drastic or intimidating changes (\"Nothing too drastic\u2014we\u2019re just looking at reallocating some of your investments.\")",
+        "Don't focus solely on numbers without connecting to the client\u2019s emotional goals (e.g., legacy planning and family priorities)."
+    ]
+}

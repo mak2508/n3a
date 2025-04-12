@@ -1,0 +1,12 @@
+{
+    "dos": [
+        "**Acknowledge and validate concerns with empathy** (\"I hear you,\" \"that\u2019s the goal\u2014to create a retirement plan that gives you security and freedom\").",
+        "**Offer reassurance along with practical solutions** (\"Here\u2019s the good news: there are ways to mitigate those risks,\" \"you\u2019ll still have room for enjoyment, but with added peace of mind\").",
+        "**Incorporate aspirational language tied to the client's goals** (\"You could even afford some luxuries like travel or hobbies you've dreamed about\")."
+    ],
+    "donts": [
+        "**Don't dismiss or minimize concerns** (e.g., avoid brushing aside challenges like market fluctuations or unexpected expenses).",
+        "**Avoid solely focusing on technicalities without connecting to emotional objectives** (e.g., ensure solutions are framed as supporting security and lifestyle aspirations).",
+        "**Don't overpromise or make guarantees unrelated to realistic planning** (keep focus grounded in flexible and cautious strategies)."
+    ]
+}

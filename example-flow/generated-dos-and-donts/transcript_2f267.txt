@@ -1,0 +1,12 @@
+{
+    "dos": [
+        "Validate and reassure client concerns with encouraging language (\"You\u2019ve done so much already, and now, it\u2019s about protecting and refining what you\u2019ve built\").",
+        "Strike a balance between growth and stability to address both concerns and aspirations (\"It protects part of your savings without putting all your eggs in one basket\").",
+        "Offer solutions tied to emotional outcomes like peace of mind and security (\"Planning ahead for those scenarios can give you peace of mind\")."
+    ],
+    "donts": [
+        "Don\u2019t overlook the emotional impact of financial advice; always connect strategies to how they alleviate concerns or improve well-being.",
+        "Avoid rigid suggestions that might feel overly restrictive (\"locking myself into something\").",
+        "Don\u2019t focus exclusively on market-related factors without addressing personal future risks, like inflation or unexpected costs."
+    ]
+}

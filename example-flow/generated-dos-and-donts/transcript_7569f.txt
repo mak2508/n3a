@@ -1,0 +1,12 @@
+{
+    "dos": [
+        "Acknowledge emotions and reassure the client with empathetic, validating statements (\u201cIt\u2019s natural to feel nervous about change\u201d).",
+        "Offer specific, strategic examples to illustrate plans and build confidence (\u201cFor instance, we could shift a small percentage to sectors likely to grow, like renewable energy or healthcare\u201d).",
+        "Use optimistic and empowering language to motivate the client (\u201cWe\u2019re going to make a plan that doesn\u2019t just preserve your savings, but helps them grow in a manageable, sustainable way\u201d)."
+    ],
+    "donts": [
+        "Don\u2019t dismiss concerns outright; always address skepticism with practical reassurance instead of debate.",
+        "Avoid proposing changes without reducing perceived risks first (\u201cDiversifying doesn\u2019t mean taking huge risks\u2014it spreads out the uncertainty\u201d).",
+        "Don\u2019t move forward without ensuring the client fully understands and feels confident about the proposed strategy."
+    ]
+}

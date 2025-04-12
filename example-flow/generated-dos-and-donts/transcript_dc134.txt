@@ -1,0 +1,12 @@
+{
+    "dos": [
+        "Acknowledge and validate the client\u2019s emotions with reassurance (\"you\u2019re not alone in feeling that way\").",
+        "Emphasize security and stability while offering clear, actionable solutions (\"we\u2019re here to put safeguards in place\").",
+        "Highlight positive outcomes and align the strategy with their goals (\"you\u2019ll have both stability and the freedom to take the retirement trips or experiences you\u2019ve dreamed of\")."
+    ],
+    "donts": [
+        "Avoid dismissing or minimizing concerns about risks and uncertainties (\"Losses at this stage would scare me\").",
+        "Don't overwhelm the client with overly technical details or options without connecting them to emotional needs.",
+        "Avoid pushing for high-risk strategies; instead, prioritize the client\u2019s comfort and trust."
+    ]
+}

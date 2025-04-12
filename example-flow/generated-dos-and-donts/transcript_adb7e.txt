@@ -1,0 +1,12 @@
+{
+    "dos": [
+        "Validate and address concerns with clear and reassuring language (\"We\u2019ll ensure you have enough accessible assets as part of the plan\").",
+        "Present options that balance flexibility and security while explaining trade-offs thoughtfully (\"An annuity offers guaranteed income but limits how much you can access at once\").",
+        "Emphasize partnership and ongoing guidance to ease decision-making anxiety (\"I\u2019m here to guide you every step of the way\")."
+    ],
+    "donts": [
+        "Don't introduce potential risks (like inflation or healthcare costs) without immediately offering solutions to mitigate them.",
+        "Avoid overwhelming the client by overloading technical details without breaking them into manageable, digestible steps.",
+        "Don't minimize concerns about flexibility; address them thoughtfully by focusing on diversification and tailored strategies."
+    ]
+}

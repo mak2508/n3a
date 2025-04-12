@@ -1,0 +1,12 @@
+{
+    "dos": [
+        "Acknowledge and empathize with client concerns (\u201cMany clients share the same concerns\u201d).",
+        "Use optimistic and encouraging language to build confidence (\u201cConfidence is exactly what I want you to feel as we move forward\u201d).",
+        "Provide practical solutions to specific concerns (\u201cWe could consider setting aside a liquid emergency fund or adjusting your portfolio\u201d)."
+    ],
+    "donts": [
+        "Avoid using overly technical terms without clear explanations (\u201cbarring any major economic disruptions\u201d).",
+        "Don\u2019t downplay concerns or leave them unresolved (\u201cwhat happens if inflation keeps rising?\u201d needs thorough mitigation strategies).",
+        "Avoid rushing through plans without engaging the client\u2019s emotions and preferences."
+    ]
+}

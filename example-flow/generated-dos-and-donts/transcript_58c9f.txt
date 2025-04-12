@@ -1,0 +1,11 @@
+{
+    "dos": [
+        "Validate emotions and concerns with empathy (\"You're not alone in feeling that way\").",
+        "Reassure the client with optimistic language (\"Your future looks bright, Ms. Taylor\").",
+        "Proactively address risks and uncertainties with actionable solutions (\"We can put safeguards in place\")."
+    ],
+    "donts": [
+        "Avoid intimidating terminology or approaches (\"Worst-case scenarios\" sounded nerve-wracking).",
+        "Don\u2019t downplay emotional concerns; prioritize addressing them alongside financial strategies."
+    ]
+}

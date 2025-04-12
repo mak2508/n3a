@@ -1,0 +1,13 @@
+{
+    "dos": [
+        "**Do's**:",
+        "Acknowledge concerns and validate emotions with empathy (\"I hear you, Mrs. Carter\").",
+        "Offer actionable reassurance and balanced solutions (\"We\u2019ll ensure your portfolio has the right balance\u2014one that minimizes risk but keeps you on track for growth\").",
+        "Focus on inspiring confidence through optimistic yet realistic outcomes (\"I\u2019m confident we can set you up for a retirement that\u2019s both enjoyable and worry-free\").",
+        "**Don'ts**:",
+        "Don't introduce potential challenges (e.g., inflation, market crashes) without immediately providing reassurance or solutions.",
+        "Avoid pushing for significant changes without accounting for client hesitations or nerves.",
+        "Don't neglect to explain strategies in simple, relatable terms to keep the client feeling secure and informed."
+    ],
+    "donts": []
+}

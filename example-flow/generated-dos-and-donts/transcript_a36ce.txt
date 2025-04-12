@@ -1,0 +1,12 @@
+{
+    "dos": [
+        "Acknowledge and validate concerns with empathy and reassurance (\"Market fluctuations and healthcare are dynamic factors, but we can plan for them\")",
+        "Personalize the planning process to match the client's aspirations (\"Let\u2019s tailor your retirement plan to focus on those experiences\")",
+        "Reinforce optimism and provide a clear sense of security (\"Your retirement can be a time of freedom and fulfillment\u2014with the right plan to guide you\")"
+    ],
+    "donts": [
+        "Don't dismiss concerns without offering actionable solutions (e.g., balance security with discretionary spending for travel)",
+        "Avoid overly technical or impersonal language; always link advice to the client's goals",
+        "Don't rush or overlook opportunities to deepen understanding of the client's priorities"
+    ]
+}

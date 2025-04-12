@@ -1,0 +1,12 @@
+{
+    "dos": [
+        "Acknowledge and validate feelings to build trust and show empathy (\"It's completely natural to feel that way\").",
+        "Provide reassuring and optimistic messages backed by data or strategic options (\"You're already ahead of many people your age\").",
+        "Discuss balance and flexibility in strategies to address client concerns (\"We can find a balance\u2014lower-risk investments that still help your savings grow\")."
+    ],
+    "donts": [
+        "Avoid dismissing or minimizing client fears without offering solutions (\"Something might derail everything\" should be met with actionable steps, not vagueness).",
+        "Don't push high-risk strategies if the client expresses clear hesitation about risk.",
+        "Avoid overly technical jargon that might confuse or further overwhelm the client."
+    ]
+}

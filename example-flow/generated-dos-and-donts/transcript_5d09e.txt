@@ -1,0 +1,12 @@
+{
+    "dos": [
+        "Validate the client's emotions and concerns with empathy (\"That's a valid concern\").",
+        "Offer reassurance and practical solutions without judgment (\"Don\u2019t worry\u2014it\u2019s never too late\").",
+        "Emphasize balance and alignment with personal goals as part of financial strategy (\"It\u2019s about aligning your investments with your future goals\")."
+    ],
+    "donts": [
+        "Don't amplify regret or doubts about past decisions (\"It feels like I should have done that earlier\").",
+        "Avoid overloading the conversation with technical jargon or complex details.",
+        "Don't dismiss concerns without addressing them directly."
+    ]
+}

@@ -1,0 +1,12 @@
+{
+    "dos": [
+        "Acknowledge and validate concerns with empathy (\"I hear you\", \"That's a valid concern\").",
+        "Highlight positives and provide comforting comparisons (\"Honestly, you're in much better shape than many people I meet\").",
+        "Offer clear and balanced solutions that address concerns while maintaining optimism (\"We can choose options with flexibility\", \"We won't take unnecessary risks\")."
+    ],
+    "donts": [
+        "Don't dismiss worries without addressing them thoughtfully (\"What if I outlive my savings?\", \"Isn't that risky this close to retirement?\").",
+        "Avoid overly technical or rigid advice without emphasizing flexibility (\"Annuities lock me in\").",
+        "Don't make the client feel regret over missed opportunities; focus on what can be optimized now (\"I wish I'd started planning earlier\")."
+    ]
+}

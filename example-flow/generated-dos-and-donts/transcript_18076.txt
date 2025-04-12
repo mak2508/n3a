@@ -1,0 +1,12 @@
+{
+    "dos": [
+        "Acknowledge concerns with empathy and reassurance (\"It\u2019s hard to think about sometimes\" or \"Your financial security remains our top priority\").",
+        "Recommend cautious, incremental strategies (\"How about we start small? Adjusting just 20% of your portfolio...\").",
+        "Focus on transparency and proactive planning (\"We\u2019ll create projections based on various scenarios\")."
+    ],
+    "donts": [
+        "Don't dismiss or minimize the client's anxiety about risks or future expenses.",
+        "Avoid using overly complex jargon without linking the information to emotional reassurance.",
+        "Don't push for large changes at once\u2014scale the advice to align with the client\u2019s comfort level."
+    ]
+}

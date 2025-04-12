@@ -1,0 +1,13 @@
+{
+    "dos": [
+        "**Do's**:",
+        "Acknowledge and validate concerns with empathy (\u201cYour concern is valid, and that's why we emphasize diversification\u201d).",
+        "Highlight the client\u2019s achievements to build confidence (\u201cYou\u2019re in a great position to make powerful choices\u201d).",
+        "Incorporate the client\u2019s personal dreams into the financial plan (\u201cWe can allocate funds specifically for dreams like that, so you can enjoy them guilt-free\u201d).",
+        "**Don'ts**:",
+        "Avoid overly technical language without connecting it to the client\u2019s goals (\u201cadjustments like these are about stability, not risk-taking\u201d).",
+        "Don\u2019t dismiss emotional concerns or focus exclusively on numbers.",
+        "Avoid leaving open-ended doubts without offering solutions."
+    ],
+    "donts": []
+}

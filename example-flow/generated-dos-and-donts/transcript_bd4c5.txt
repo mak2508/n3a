@@ -1,0 +1,12 @@
+{
+    "dos": [
+        "Validate and empathize with the client\u2019s concerns (\"That\u2019s a valid concern\"/\"It\u2019s normal to feel that way\").",
+        "Provide reassuring and empowering statements (\"We\u2019ll design a strategy tailored to your goals\").",
+        "Offer practical solutions linked to emotional reassurance (\"This will ensure stability while giving your money room to grow\")."
+    ],
+    "donts": [
+        "Don't dismiss or downplay risks the client is worried about; always acknowledge them (\"I completely understand\").",
+        "Avoid vague or overly technical advice; ensure suggestions feel accessible and actionable.",
+        "Don\u2019t focus solely on future gains without addressing current fears or uncertainties."
+    ]
+}

@@ -1,0 +1,12 @@
+{
+    "dos": [
+        "Respond to client concerns with empathy and reassurance (\"It\u2019s perfectly normal to feel that way\").",
+        "Provide actionable strategies that minimize uncertainties and empower the client (\"We can build a contingency plan to give you peace of mind\").",
+        "Use positive, forward-looking language to inspire confidence (\"This next chapter can be both secure and enjoyable\")."
+    ],
+    "donts": [
+        "Don't dismiss concerns without explanation or reassurance (\"Do you think my current strategy isn\u2019t enough after all?\").",
+        "Avoid suggesting drastic changes without framing them as small, beneficial adjustments (\"Small tweaks can make [your portfolio] even stronger\").",
+        "Don't leave uncertainties unaddressed\u2014always offer a solution or mitigating strategy."
+    ]
+}

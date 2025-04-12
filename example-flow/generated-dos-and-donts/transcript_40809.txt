@@ -1,0 +1,12 @@
+{
+    "dos": [
+        "Acknowledge concerns and provide soothing reassurances (\"You won\u2019t have to worry about jeopardizing your goals\").",
+        "Offer pragmatic solutions for uncertainties (\"We could set up a dedicated emergency fund that's accessible and grows alongside your portfolio\").",
+        "Use optimistic and supportive language to instill trust and confidence (\"You\u2019ve worked hard to build this; we\u2019ll make sure it lasts\")."
+    ],
+    "donts": [
+        "Don't minimize risk-related concerns\u2014address them actively (\"It\u2019s about creating balance\").",
+        "Avoid vague or overly complex jargon when explaining strategies.",
+        "Don't rush the client into accepting higher-risk proposals without first building confidence and rapport."
+    ]
+}

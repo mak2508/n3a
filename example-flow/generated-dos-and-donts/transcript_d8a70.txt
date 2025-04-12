@@ -1,0 +1,12 @@
+{
+    "dos": [
+        "Acknowledge fears and provide emotional reassurance (\"Protecting you emotionally as much as financially is my priority\").",
+        "Use optimistic and encouraging language to instill confidence (\"With a tailored strategy, you\u2019re closer to your goals than you might realize\").",
+        "Guide the client step-by-step and emphasize collaboration (\"You don\u2019t have to figure it all out by yourself\u2014that\u2019s what I\u2019m here for\")."
+    ],
+    "donts": [
+        "Avoid overly technical jargon without breaking it down into manageable steps for understanding.",
+        "Don\u2019t dismiss or minimize concerns about risk and uncertainty\u2014acknowledge them directly.",
+        "Avoid sounding impersonal or transactional\u2014focus on building trust and a personal connection."
+    ]
+}

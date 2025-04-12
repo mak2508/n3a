@@ -1,0 +1,12 @@
+{
+    "dos": [
+        "Validate and empathize with concerns to build trust (\"It\u2019s perfectly natural to have concerns like that\").",
+        "Provide reassuring and optimistic language to instill confidence (\"Let me reassure you: The diversified approach we've discussed would buffer you against major market fluctuations\").",
+        "Highlight the positive outcomes of planning (\"Retirement should be a time for you to enjoy life, not to stress about finances\")."
+    ],
+    "donts": [
+        "Avoid using overly cautious language that might amplify worries (\"These factors can be tricky to predict\").",
+        "Don't dismiss or rush past expressions of anxiety; acknowledge them thoroughly before offering solutions.",
+        "Avoid focusing too much on technical aspects at the expense of emotional reassurance."
+    ]
+}

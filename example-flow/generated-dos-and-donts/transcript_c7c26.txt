@@ -1,0 +1,12 @@
+{
+    "dos": [
+        "Acknowledge client concerns with empathy to build trust (\"I totally understand how unsettling it can be\").",
+        "Reassure the client by focusing on proactive solutions and optimism (\"With the right approach, you'll be well-prepared\").",
+        "Emphasize the benefits of planning to create a positive vision for the future (\"Retirement is your time to enjoy life, and careful planning will make that possible\")."
+    ],
+    "donts": [
+        "Don't introduce potential uncertainties (e.g., adjustments) without immediately offering a reassuring plan to address them.",
+        "Avoid downplaying concerns or skipping over emotional responses\u2014acknowledge and validate feelings fully.",
+        "Don't focus solely on financial details; link them to personal goals and emotional outcomes to make the plan more relatable."
+    ]
+}

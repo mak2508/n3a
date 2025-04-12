@@ -1,0 +1,12 @@
+{
+    "dos": [
+        "Acknowledge and validate concerns empathetically (\"And that\u2019s a valid concern\").",
+        "Present clear and reassuring solutions while emphasizing flexibility (\"It\u2019s about being flexible and proactive\").",
+        "Highlight achievement and optimism (\"Together, we\u2019ll make sure you\u2019re not just secure but thriving in your retirement\")."
+    ],
+    "donts": [
+        "Avoid dismissing client worries or making them feel unprepared (\"Will that mean I need to save even more?\").",
+        "Don\u2019t oversimplify or use generic advice\u2014tailor suggestions to the client\u2019s needs and concerns.",
+        "Don't focus solely on risks; balance your advice with optimism and growth opportunities."
+    ]
+}

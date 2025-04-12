@@ -1,0 +1,12 @@
+{
+    "dos": [
+        "Acknowledge past concerns and validate the client's emotions (\"I hear you. That was a tough time for many\").",
+        "Provide simple explanations for complex concepts to reduce apprehension (\"It\u2019s actually simpler than it sounds\").",
+        "Reassure the client about the ultimate goal, focusing on peace of mind (\"Ultimately, this plan is about giving you peace of mind\")."
+    ],
+    "donts": [
+        "Don't introduce complicated terms or strategies without explaining them thoroughly (\"Annuities? Healthcare buffer? That sounds complicated\").",
+        "Avoid dismissing the client's fears of financial instability or market risks.",
+        "Don't overly focus on technicalities without tying them back to the client's emotional need for security and trust."
+    ]
+}

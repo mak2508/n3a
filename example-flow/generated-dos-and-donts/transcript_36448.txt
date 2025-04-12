@@ -1,0 +1,12 @@
+{
+    "dos": [
+        "Acknowledge and empathize with the client\u2019s worries to build trust and connection (\u201cI understand that\u2019s a common concern\u201d).",
+        "Reassure with specific, actionable solutions to address concerns (\u201cWe\u2019ll include a contingency fund specifically for unforeseen expenses\u201d).",
+        "Offer flexible and optimistic strategies that align with the client\u2019s goals (\u201cWe could allocate extra funds for travel in the first few years and scale back later if necessary\u201d)."
+    ],
+    "donts": [
+        "Avoid introducing potential challenges without immediately balancing them with positive solutions or reassurances (\u201cThese variables can affect your long-term financial security\u201d).",
+        "Don\u2019t downplay the client\u2019s dreams or concerns\u2014align the plan to support their aspirations (\u201cWith some careful planning, we can make those trips happen while maintaining your financial peace of mind\u201d).",
+        "Don\u2019t use language that might overwhelm or further stress the client. Instead, keep the tone constructive and calming."
+    ]
+}

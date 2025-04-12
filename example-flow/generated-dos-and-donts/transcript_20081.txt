@@ -1,0 +1,11 @@
+{
+    "dos": [
+        "Acknowledge concerns empathetically and offer actionable plans to address them (\"That\u2019s a valid concern. We can address that...\").",
+        "Reinforce the client\u2019s positive actions and financial discipline (\"With your discipline and a well-structured plan, I believe your retirement can be both fulfilling and worry-free\").",
+        "Engage the client in making decisions by seeking their input (\"What do you think about that?\")."
+    ],
+    "donts": [
+        "Avoid framing risks in a way that might alarm the client excessively (\"I don\u2019t want to alarm you\").",
+        "Don't overlook emotional reassurance when discussing technical strategies (\"Adding a cushion to your plan could help you feel more confident\")."
+    ]
+}

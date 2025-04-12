@@ -1,0 +1,11 @@
+{
+    "dos": [
+        "Acknowledge and empathize with the client\u2019s emotions (\u201cI understand completely\u2014it can feel overwhelming\u201d).",
+        "Reassure with personalized and specific examples of planning strategies (\u201cThis way, you'll have a stronger safety net\u201d).",
+        "Inspire confidence with optimistic yet realistic framing (\"Your retirement can be as secure and joyful as you\u2019ve always envisioned\")."
+    ],
+    "donts": [
+        "Avoid overwhelming the client with complex or uncertain scenarios without immediately offering solutions.",
+        "Don\u2019t dismiss or downplay the client\u2019s fears and worries; always address them directly with empathy."
+    ]
+}

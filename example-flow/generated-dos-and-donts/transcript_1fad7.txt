@@ -1,0 +1,12 @@
+{
+    "dos": [
+        "Validate concerns with empathy and provide reassurance (\"I hear you, Mrs. Thompson. But this is actually an opportunity\").",
+        "Offer proactive solutions framed positively (\"By preparing for worst-case scenarios ahead of time, you can feel more secure and protected\").",
+        "Use collaborative language to foster trust and partnership (\"Together, we\u2019ll design a strategy that\u2019s both protective and flexible\")."
+    ],
+    "donts": [
+        "Don\u2019t introduce changes or adjustments abruptly without framing them positively (\"Wait\u2026 adjustments?\").",
+        "Avoid phrasing that might unintentionally create doubt or discourage confidence (\"To be honest, we may need to add some layers to your plan\").",
+        "Don\u2019t leave concerns unaddressed\u2014always connect challenges with solutions that instill optimism and security."
+    ]
+}

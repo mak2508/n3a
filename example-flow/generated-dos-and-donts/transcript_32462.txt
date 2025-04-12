@@ -1,0 +1,12 @@
+{
+    "dos": [
+        "Validate emotional concerns and provide reassurance (\"Our goal is to give you peace of mind\").",
+        "Offer proactive solutions with clear rationale (\"Adjusting doesn\u2019t mean abandoning growth entirely, though\").",
+        "Maintain optimism and empowerment throughout (\"Your retirement should be a time of fulfillment and security\")."
+    ],
+    "donts": [
+        "Don't dismiss or downplay longer-term concerns like outliving savings.",
+        "Avoid making adjustments sound like sacrifices (focus instead on the benefits of balance).",
+        "Don't neglect periodic follow-ups to sustain confidence (e.g., annual reviews)."
+    ]
+}

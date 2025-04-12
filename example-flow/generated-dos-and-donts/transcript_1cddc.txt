@@ -1,0 +1,12 @@
+{
+    "dos": [
+        "Validate and acknowledge the client's concerns with empathy and reassurance (\"I completely understand how you feel\").",
+        "Emphasize collaborative problem-solving and ongoing support (\"you\u2019re not facing it alone\").",
+        "Provide specific strategies to address uncertainties while instilling confidence (\"we can prepare for these uncertainties\")."
+    ],
+    "donts": [
+        "Don't casually introduce potential risks without offering clear solutions (\"health care costs are projected to increase steadily\").",
+        "Avoid overly technical or abstract explanations that could overwhelm or worry the client.",
+        "Don't dismiss concerns or fail to address emotional aspects of the discussion."
+    ]
+}

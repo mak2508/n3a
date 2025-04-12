@@ -1,0 +1,12 @@
+{
+    "dos": [
+        "Validate and reassure the client's concerns with empathy (\"But that's why we're here\u2014to plan for the unexpected\").",
+        "Offer step-by-step guidance to reduce overwhelm (\"We can take it step by step\").",
+        "Highlight the emotional benefits of planning, like peace of mind and financial stability (\"Retirement planning isn\u2019t just about finances, it\u2019s about peace of mind\")."
+    ],
+    "donts": [
+        "Don't overly focus on technical or financial products without addressing emotional ramifications.",
+        "Avoid pressuring the client into decisions (\"Maybe\u2026 I\u2019ll have to think about it\").",
+        "Don't introduce concepts without adequate explanation to ease reluctance or hesitation (e.g., \"Insurance?\")."
+    ]
+}

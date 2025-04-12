@@ -1,0 +1,12 @@
+{
+    "dos": [
+        "Show empathy and understanding (\"I know change can feel overwhelming\").",
+        "Offer reassurance alongside pragmatic solutions (\"with some smart planning, we can make sure your retirement is both secure and comfortable\").",
+        "Highlight flexible and adaptive planning (\"financial plans don\u2019t have to be set in stone; we\u2019ll adjust as your needs evolve\")."
+    ],
+    "donts": [
+        "Avoid technical jargon or overly complex explanations that might heighten uncertainty (\"Not necessarily missing something, but we could shift some funds into lower-risk options as you approach retirement\").",
+        "Don\u2019t dismiss concerns without fully addressing them (e.g., \"some annuities do come with restrictions,\" without elaborating on how specific options mitigate flexibility concerns).",
+        "Avoid rushing decisions; instead, focus on guiding the client through careful analysis."
+    ]
+}

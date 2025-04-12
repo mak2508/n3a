@@ -1,0 +1,12 @@
+{
+    "dos": [
+        "Validate and normalize the client\u2019s concerns with empathy and understanding (\"I completely understand, and you\u2019re not alone in feeling this way\").",
+        "Pair practical solutions with emotional reassurance (\"It\u2019s all about planning for peace of mind\").",
+        "Encourage thoughtful reflection by asking open-ended questions (\"Do you have goals for what you want to leave behind for your family or causes you care about?\")."
+    ],
+    "donts": [
+        "Avoid excessive focus on risks without offering a reassuring balance (\"If unforeseen medical costs arise, your current plan might experience strain\").",
+        "Don\u2019t overwhelm the client with too many details or technical language at once.",
+        "Avoid dismissing or minimizing concerns\u2014address them constructively and empathetically."
+    ]
+}

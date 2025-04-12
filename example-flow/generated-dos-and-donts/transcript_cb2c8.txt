@@ -1,0 +1,12 @@
+{
+    "dos": [
+        "Acknowledge and validate concerns with empathy (\"That\u2019s a valid concern\").",
+        "Reassure the client by emphasizing their efforts and current positioning (\"You\u2019ve done an excellent job preparing for this next chapter of your life\").",
+        "Break complex topics into manageable steps and offer collaborative support (\"We\u2019ll work together to design a strategy that addresses these concerns\")."
+    ],
+    "donts": [
+        "Don't dismiss concerns, even if the client is in a strong financial position.",
+        "Avoid overwhelming the client with too much technical jargon at once.",
+        "Don't leave uncertainties unanswered\u2014always propose actionable, reassuring strategies."
+    ]
+}

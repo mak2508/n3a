@@ -1,0 +1,12 @@
+{
+    "dos": [
+        "Validate concerns with understanding and reassurance (\"It\u2019s common to feel this way\u2014it\u2019s a big decision\u2014but that\u2019s why we\u2019re here\").",
+        "Present optimistic possibilities to give hope and excitement (\"With your current trajectory, you could retire early if you wanted, or even afford some luxuries\").",
+        "Anchor technical advice in practical solutions that offer emotional security (\"With diversified investments and a conservative withdrawal rate, we can put safeguards in place\")."
+    ],
+    "donts": [
+        "Don\u2019t dismiss or downplay fears or anxieties; always address them constructively.",
+        "Avoid introducing overly complex strategies without clear and simple explanations.",
+        "Don\u2019t focus exclusively on risks\u2014balance discussions with exciting opportunities (\"This next stage of your life should be as fulfilling as possible\")."
+    ]
+}

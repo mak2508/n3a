@@ -1,0 +1,12 @@
+{
+    "dos": [
+        "Acknowledge concerns with empathy to build trust and connection (\"I completely understand your concerns\").",
+        "Reassure while offering actionable solutions (\"With some adjustments now, your post-work years can be about enjoying life, not stressing over finances\").",
+        "Highlight the positive impact of the client\u2019s actions and decisions (\"You\u2019re taking the right steps to ensure a secure and fulfilling retirement\")."
+    ],
+    "donts": [
+        "Avoid using uncertain language that may increase doubt or anxiety (\"likely\" without further clarification of confidence level).",
+        "Don\u2019t dwell on risks without balancing them with reassurance or solutions.",
+        "Avoid leaving concerns unaddressed; always offer a clear next step or strategy in response to worries."
+    ]
+}

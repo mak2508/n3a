@@ -1,0 +1,12 @@
+{
+    "dos": [
+        "**Acknowledge and validate concerns with empathy** (\u201cI completely understand how tough that is to consider\u201d).",
+        "**Reassure the client with positive reinforcement** (\u201cYou\u2019re making excellent choices\u2014the future looks bright\u201d).",
+        "**Offer actionable and optimistic solutions for concerns** (\u201cAdding long-term care insurance to your portfolio could protect your assets\u201d)."
+    ],
+    "donts": [
+        "**Don\u2019t dismiss or downplay client worries** (e.g., concerns about market crashes or health should be addressed thoughtfully).",
+        "**Avoid overly complex or restrictive suggestions** without clarifying flexibility (\u201cThere are flexible options as well\u201d for annuities).",
+        "**Don\u2019t focus solely on technical details\u2014connect practical advice to emotional needs** (e.g., maintaining quality of life or reducing worry)."
+    ]
+}

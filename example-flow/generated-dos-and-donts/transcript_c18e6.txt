@@ -1,0 +1,12 @@
+{
+    "dos": [
+        "Acknowledge and validate concerns with empathy (\"I understand\u2014it\u2019s a lot to consider\")",
+        "Highlight and affirm strengths in the client's progress (\"You\u2019ve done quite well\")",
+        "Emphasize resilience and proactive planning (\"building flexibility into your plan so you\u2019re ready for any surprises\")"
+    ],
+    "donts": [
+        "Avoid presenting external risks without offering solutions in the same breath",
+        "Don\u2019t disregard the client's feelings of uncertainty (\"But I\u2019m worried I might not have saved enough\")",
+        "Avoid overwhelming the client with too many options at once"
+    ]
+}

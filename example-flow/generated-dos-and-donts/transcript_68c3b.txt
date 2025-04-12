@@ -1,0 +1,12 @@
+{
+    "dos": [
+        "Acknowledge and empathize with concerns to build trust (\"I hear you,\" \"Those are valid concerns\").",
+        "Reassure with flexibility and support (\"This plan is flexible, and we're here to adjust whenever needed\").",
+        "Provide clear, actionable solutions to address specific worries (\"Strategies like staggered withdrawals can make your savings last longer\")."
+    ],
+    "donts": [
+        "Avoid using jargon or complex concepts without clarification (\"Diversifying investments\" may cause confusion).",
+        "Don't downplay or dismiss the client\u2019s anxiety about risks or uncertainties.",
+        "Avoid being overly procedural without emphasizing long-term partnership and guidance."
+    ]
+}

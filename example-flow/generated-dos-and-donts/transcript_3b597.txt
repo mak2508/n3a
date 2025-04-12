@@ -1,0 +1,11 @@
+{
+    "dos": [
+        "Validate client concerns with empathy and reassurance (\"It\u2019s normal to feel that way\"; \"We won\u2019t expose you to unnecessary risk\").",
+        "Simplify complex financial concepts by providing clear, practical examples (\"a \u2018bucket strategy\u2019\u2014we\u2019d ensure your short-term income needs are in secure, low-risk investments, while longer-term assets have time to grow\").",
+        "Highlight opportunities for enjoyment and fulfillment in retirement to create optimism (\"with your current savings, you\u2019d likely have room for occasional travel or hobbies\")."
+    ],
+    "donts": [
+        "Don't dismiss or gloss over client anxieties without addressing them directly (\"it feels overwhelming sometimes\"; \"what if the market dips?\").",
+        "Avoid overwhelming the client with excessive financial jargon or technical details (\"Optimize? What does that mean exactly?\")."
+    ]
+}
