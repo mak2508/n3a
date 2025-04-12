@@ -63,6 +63,31 @@ export function MeetingDetails({ meeting, onUpdate }: MeetingDetailsProps) {
     setIsProcessing(false);
   };
 
+  const handleFileUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (!file) return;
+
+    try {
+      const formData = new FormData();
+      formData.append('file', file);
+
+      const response = await fetch('http://localhost:8000/api/files/upload', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (!response.ok) {
+        throw new Error('Upload failed');
+      }
+
+      const data = await response.json();
+      console.log('File uploaded successfully:', data);
+      // TODO: Update the meeting record with the file URL
+    } catch (error) {
+      console.error('Error uploading file:', error);
+    }
+  };
+
   return (
     <div className="bg-white rounded-lg shadow p-6">
       <div className="space-y-6">
@@ -225,9 +250,7 @@ export function MeetingDetails({ meeting, onUpdate }: MeetingDetailsProps) {
                 type="file"
                 accept="audio/*"
                 className="hidden"
-                onChange={(e) => {
-                  simulateProcessing();
-                }}
+                onChange={handleFileUpload}
               />
               <button
                 onClick={() => simulateProcessing()}

@@ -17,6 +17,25 @@ export interface SentimentEvent {
   sentiment: number;
 }
 
+export interface Client {
+  id: string;
+  name: string;
+  email?: string | null;
+  phone?: string | null;
+  dateOfBirth?: string | null;
+  profession?: string | null;
+  relationshipType: string;
+  insights?: ClientInsight[];
+}
+
+export interface ClientInsight {
+  id: string;
+  clientId: string;
+  category: string;
+  insight: string;
+  sourceMeetingId?: string | null;
+}
+
 export const MEETING_TYPES = [
   'Retirement Planning',
   'Investment Review',

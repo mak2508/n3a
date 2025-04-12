@@ -1,68 +1,76 @@
-import { useEffect, useState, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 import { Meeting } from '../types';
-import { supabase } from '../lib/supabase';
 
-export function useMeetings() {
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+
+export const useMeetings = () => {
   const [meetings, setMeetings] = useState<Meeting[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const fetchMeetings = useCallback(async () => {
-    setLoading(true);
-    try {
-      // Fetch meetings
-      const { data: meetingsData, error: meetingsError } = await supabase
-        .from('meetings')
-        .select('*')
-        .order('date', { ascending: false });
+  useEffect(() => {
+    const fetchMeetings = async () => {
+      try {
+        console.log('Fetching meetings from:', `${API_URL}/api/meetings`);
+        const response = await fetch(`${API_URL}/api/meetings`);
+        if (!response.ok) {
+          throw new Error('Failed to fetch meetings');
+        }
+        const data = await response.json();
+        console.log('Raw meetings data:', JSON.stringify(data, null, 2));
+        
+        // Transform snake_case to camelCase
+        const transformedData = data.map((meeting: any) => {
+          const transformed = {
+            id: meeting.id,
+            clientName: meeting.client_name,
+            date: meeting.date,
+            meetingType: meeting.meeting_type,
+            description: meeting.description,
+            audioUrl: meeting.audio_url,
+            transcript: meeting.transcript,
+            summary: meeting.summary,
+            sentiment: meeting.sentiment,
+            sentimentEvents: meeting.sentiment_events
+          };
+          console.log('Individual transformed meeting:', JSON.stringify(transformed, null, 2));
+          return transformed;
+        });
+        
+        console.log('Final transformed meetings:', JSON.stringify(transformedData, null, 2));
+        setMeetings(transformedData);
+      } catch (err) {
+        console.error('Error fetching meetings:', err);
+        setError(err instanceof Error ? err.message : 'An error occurred');
+      } finally {
+        setLoading(false);
+      }
+    };
 
-      if (meetingsError) throw meetingsError;
-
-      // Fetch sentiment events
-      const { data: sentimentData, error: sentimentError } = await supabase
-        .from('sentiment_events')
-        .select('*');
-
-      if (sentimentError) throw sentimentError;
-
-      // Transform the data to match our frontend types
-      const meetingsWithEvents = meetingsData.map((meeting) => ({
-        id: meeting.id,
-        clientName: meeting.client_name,
-        date: meeting.date,
-        meetingType: meeting.meeting_type,
-        description: meeting.description,
-        audioUrl: meeting.audio_url,
-        transcript: meeting.transcript,
-        summary: meeting.summary,
-        sentiment: meeting.sentiment,
-        sentimentEvents: sentimentData
-          .filter((event) => event.meeting_id === meeting.id)
-          .map((event) => ({
-            timestamp: event.timestamp,
-            event: event.event,
-            sentiment: event.sentiment,
-          })),
-      }));
-
-      setMeetings(meetingsWithEvents);
-      setError(null);
-    } catch (err) {
-      console.error('Error in fetchMeetings:', err);
-      setError(err instanceof Error ? err.message : 'An error occurred');
-    } finally {
-      setLoading(false);
-    }
+    fetchMeetings();
   }, []);
 
-  // Function to manually refresh meetings data
-  const refreshMeetings = useCallback(() => {
-    return fetchMeetings();
-  }, [fetchMeetings]);
+  const updateMeeting = async (meetingId: string, updates: Partial<Meeting>) => {
+    try {
+      const response = await fetch(`${API_URL}/api/meetings/${meetingId}`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(updates),
+      });
 
-  useEffect(() => {
-    fetchMeetings();
-  }, [fetchMeetings]);
+      if (!response.ok) {
+        throw new Error('Failed to update meeting');
+      }
 
-  return { meetings, loading, error, refreshMeetings };
-}
+      const updatedMeeting = await response.json();
+      setMeetings(meetings.map(m => m.id === meetingId ? updatedMeeting : m));
+    } catch (err) {
+      console.error('Error updating meeting:', err);
+      throw err;
+    }
+  };
+
+  return { meetings, loading, error, updateMeeting };
+};

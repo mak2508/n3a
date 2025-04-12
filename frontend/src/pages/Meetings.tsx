@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Meeting, MEETING_TYPES } from '../types';
-import { useMeetings } from '../hooks/useMeetings';
 import { formatDate } from '../utils';
-import { supabase } from '../lib/supabase';
 
-export function MeetingsPage() {
-  const { meetings, loading, error, refreshMeetings } = useMeetings();
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+
+export function Meetings() {
+  const [meetings, setMeetings] = useState<Meeting[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const [selectedMeeting, setSelectedMeeting] = useState<Meeting | null>(null);
   const [isEditing, setIsEditing] = useState(false);
   const [editedMeeting, setEditedMeeting] = useState<Meeting | null>(null);
@@ -16,6 +18,27 @@ export function MeetingsPage() {
     const date = new Date(dateString);
     return date.toISOString().slice(0, 16); // Format: YYYY-MM-DDThh:mm
   };
+
+  const fetchMeetings = async () => {
+    try {
+      const response = await fetch(`${API_URL}/api/meetings`);
+      if (!response.ok) {
+        throw new Error('Failed to fetch meetings');
+      }
+      const data = await response.json();
+      setMeetings(data);
+      setError(null);
+    } catch (err) {
+      console.error('Error fetching meetings:', err);
+      setError(err instanceof Error ? err.message : 'An error occurred');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchMeetings();
+  }, []);
 
   useEffect(() => {
     // Reset save status after 3 seconds
@@ -62,27 +85,28 @@ export function MeetingsPage() {
         description: editedMeeting.description
       });
       
-      // First update the database
-      const { data, error: updateError } = await supabase
-        .from('meetings')
-        .update({
+      // Update the meeting using our backend API
+      const response = await fetch(`${API_URL}/api/meetings/${editedMeeting.id}`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
           date: editedMeeting.date,
           meeting_type: editedMeeting.meetingType,
           description: editedMeeting.description,
-          updated_at: new Date().toISOString(),
-        })
-        .eq('id', editedMeeting.id)
-        .select();
+        }),
+      });
 
-      if (updateError) {
-        console.error('Supabase update error:', updateError);
-        throw updateError;
+      if (!response.ok) {
+        throw new Error('Failed to update meeting');
       }
 
-      console.log('Update response from Supabase:', data);
+      const updatedData = await response.json();
+      console.log('Update response from API:', updatedData);
       
-      // Refresh the meetings list from the database
-      await refreshMeetings();
+      // Refresh the meetings list
+      await fetchMeetings();
       
       // Get the updated meeting from the refreshed list
       const updatedMeeting = meetings.find(m => m.id === editedMeeting.id) || editedMeeting;

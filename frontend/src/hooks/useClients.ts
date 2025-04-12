@@ -1,49 +1,45 @@
-import { useEffect, useState } from 'react';
-import { supabase } from '../lib/supabase';
-import { Database } from '../types/supabase';
+import { useState, useEffect } from 'react';
+import { Client } from '../types';
 
-export type Client = Database['public']['Tables']['clients']['Row'] & {
-  insights: Database['public']['Tables']['client_insights']['Row'][];
-};
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
 
-export function useClients() {
+export const useClients = () => {
   const [clients, setClients] = useState<Client[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    async function fetchClients() {
+    const fetchClients = async () => {
       try {
-        const { data: clientsData, error: clientsError } = await supabase
-          .from('clients')
-          .select('*')
-          .order('name');
-
-        if (clientsError) throw clientsError;
-
-        const { data: insightsData, error: insightsError } = await supabase
-          .from('client_insights')
-          .select('*');
-
-        if (insightsError) throw insightsError;
-
-        const clientsWithInsights = clientsData.map(client => ({
-          ...client,
-          insights: insightsData.filter(insight => insight.client_id === client.id)
-        }));
-
-        setClients(clientsWithInsights);
-        setError(null);
+        const response = await fetch(`${API_URL}/api/clients`);
+        if (!response.ok) {
+          throw new Error('Failed to fetch clients');
+        }
+        const data = await response.json();
+        setClients(data);
       } catch (err) {
-        console.error('Error in fetchClients:', err);
         setError(err instanceof Error ? err.message : 'An error occurred');
       } finally {
         setLoading(false);
       }
-    }
+    };
 
     fetchClients();
   }, []);
 
-  return { clients, loading, error };
-} 
+  const fetchClientInsights = async (clientId: string) => {
+    try {
+      const response = await fetch(`${API_URL}/api/clients/${clientId}/insights`);
+      if (!response.ok) {
+        throw new Error('Failed to fetch client insights');
+      }
+      const data = await response.json();
+      return data;
+    } catch (err) {
+      console.error('Error fetching client insights:', err);
+      throw err;
+    }
+  };
+
+  return { clients, loading, error, fetchClientInsights };
+}; 

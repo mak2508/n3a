@@ -1,55 +1,10 @@
-import React, { useState } from 'react';
-import { Meeting } from './types';
-import { MeetingList } from './components/MeetingList';
-import { MeetingDetails } from './components/MeetingDetails';
-import { SentimentCloud } from './components/SentimentCloud';
-import { ChevronLeft, ChevronRight, ListChecks, BarChart } from 'lucide-react';
-import { useMeetings } from './hooks/useMeetings';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { ClientsPage } from './pages/Clients';
-import { MeetingsPage } from './pages/Meetings';
+import { Meetings } from './pages/Meetings';
 import { SentimentsPage } from './pages/Sentiments';
 
 function App() {
-  const { meetings, loading, error } = useMeetings();
-  const [selectedMeeting, setSelectedMeeting] = useState<Meeting | null>(null);
-  const [activeTab, setActiveTab] = useState<'meetings' | 'sentiment'>('meetings');
-  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
-
-  const handleUpdateMeeting = async (updatedMeeting: Meeting) => {
-    try {
-      const { error } = await supabase
-        .from('meetings')
-        .update({
-          client_name: updatedMeeting.clientName,
-          meeting_type: updatedMeeting.meetingType,
-          description: updatedMeeting.description,
-          updated_at: new Date().toISOString(),
-        })
-        .eq('id', updatedMeeting.id);
-
-      if (error) throw error;
-    } catch (err) {
-      console.error('Error updating meeting:', err);
-    }
-  };
-
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-        <div className="text-gray-600">Loading...</div>
-      </div>
-    );
-  }
-
-  if (error) {
-    return (
-      <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-        <div className="text-red-600">Error: {error}</div>
-      </div>
-    );
-  }
-
   return (
     <Router>
       <div className="min-h-screen bg-gray-100">
@@ -89,7 +44,7 @@ function App() {
 
         <main>
           <Routes>
-            <Route path="/" element={<MeetingsPage />} />
+            <Route path="/" element={<Meetings />} />
             <Route path="/sentiments" element={<SentimentsPage />} />
             <Route path="/clients" element={<ClientsPage />} />
           </Routes>
