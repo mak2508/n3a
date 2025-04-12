@@ -3,9 +3,11 @@ from typing import Optional, List
 from datetime import datetime
 
 class SentimentEvent(BaseModel):
-    timestamp: str
-    event: str
-    sentiment: int
+    id: str
+    meeting_id: str
+    sentiment: str
+    start_index: int
+    end_index: int
 
 class MeetingBase(BaseModel):
     client_name: str

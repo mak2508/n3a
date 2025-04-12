@@ -16,23 +16,23 @@ export const MEETING_TYPES = [
 
 export type MeetingType = typeof MEETING_TYPES[number];
 
-export interface SentimentEvent {
-    timestamp: string;
-    event: string;
-    sentiment: number;
-}
-
-// Base interface for common fields
 interface BaseEntity {
     id: string;
     created_at: string;
     updated_at: string;
 }
 
+export interface SentimentEvent extends BaseEntity {
+    meeting_id: string;
+    sentiment: string;
+    start_index: number;
+    end_index: number;
+}
+
 export interface Meeting extends BaseEntity {
     client_name: string;
     date: string;
-    meeting_type: MeetingType;  // Now using the union type
+    meeting_type: MeetingType;
     description: string;
     audio_url: string | null;
     transcript: string | null;
