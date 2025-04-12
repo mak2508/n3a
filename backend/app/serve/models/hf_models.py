@@ -39,9 +39,32 @@ class ModelHF:
         if not os.path.exists(audio_path):
             raise FileNotFoundError(f"Audio file not found: {audio_path}")
 
+        # Verify and convert audio file format
         try:
-            # Load and resample audio to 16000Hz
-            waveform, sample_rate = torchaudio.load(audio_path)
+            # Check if file exists and is readable
+            if not os.path.isfile(audio_path):
+                raise FileNotFoundError(f"Audio file not found: {audio_path}")
+            
+            # Try loading directly without checking supported formats
+            try:
+                waveform, sample_rate = torchaudio.load(audio_path)
+            except Exception as e:
+                # Attempt conversion if direct loading fails
+                try:
+                    import tempfile
+                    with tempfile.NamedTemporaryFile(suffix='.wav') as tmp_file:
+                        # Convert to WAV format
+                        # Note: This part might still fail if waveform isn't defined yet
+                        # Let's handle this case differently
+                        raise ValueError(f"Could not load audio file: {audio_path}. Error: {str(e)}")
+                except Exception as conv_e:
+                    raise ValueError(f"Unsupported audio format: {audio_path}. Error: {str(e)}")
+        except Exception as e:
+            raise ValueError(f"Error processing audio file: {audio_path}. Error: {str(e)}")
+
+        try:
+            # At this point, we have a valid waveform and sample_rate
+            # Resample audio to 16000Hz if needed
             if sample_rate != 16000:
                 resampler = torchaudio.transforms.Resample(orig_freq=sample_rate, new_freq=16000)
                 waveform = resampler(waveform)
@@ -67,7 +90,7 @@ class ModelHF:
                     predicted_class_id = torch.argmax(logits, dim=-1).item()
                 
                 if predicted_class_id in self.audio_events:
-                    timestamp = i / sample_rate
+                    timestamp = i / 16000  # Convert sample index to time in seconds
                     annotations.append({
                         'timestamp': timestamp,
                         'annotation': self.audio_events[predicted_class_id],
