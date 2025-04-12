@@ -10,10 +10,12 @@ load_dotenv(env_path)
 
 supabase_url = os.getenv("SUPABASE_URL")
 supabase_anon_key = os.getenv("SUPABASE_ANON_KEY")
+supabase_service_key = os.getenv("SUPABASE_SERVICE_ROLE_KEY")
 
 # Debug print (only showing first few characters of the key)
 print(f"Supabase URL: {supabase_url}")
 print(f"Supabase Anon Key length: {len(supabase_anon_key) if supabase_anon_key else 0}")
+print(f"Supabase Service Key length: {len(supabase_service_key) if supabase_service_key else 0}")
 
 if not supabase_url or not supabase_anon_key:
     raise ValueError("Missing Supabase credentials in environment variables")

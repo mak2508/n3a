@@ -1,7 +1,9 @@
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, UploadFile, File
+from fastapi.responses import JSONResponse
 from ..core.supabase import supabase
+from ..core.storage import upload_file
 from ..models.meeting import Meeting, SentimentEvent, MeetingUpdate
-from typing import List
+from typing import List, Optional
 from datetime import datetime
 
 router = APIRouter()
@@ -104,4 +106,58 @@ async def update_meeting(meeting_id: str, meeting_update: MeetingUpdate):
         return updated_meeting
     except Exception as e:
         print(f"Error in update_meeting: {str(e)}")  # Add debug logging
-        raise HTTPException(status_code=500, detail=str(e)) 
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.post("/meetings/{meeting_id}/upload-audio")
+async def upload_meeting_audio(meeting_id: str, file: UploadFile = File(...)):
+    try:
+        # Validate file type
+        if not file.content_type.startswith('audio/'):
+            raise HTTPException(
+                status_code=400,
+                detail="Invalid file type. Only audio files are allowed."
+            )
+
+        # Validate file size (50MB limit)
+        file_size = 0
+        content = bytearray()
+        
+        # Read the file in chunks to handle large files
+        while chunk := await file.read(8192):  # 8KB chunks
+            file_size += len(chunk)
+            content.extend(chunk)
+            if file_size > 50 * 1024 * 1024:  # 50MB
+                raise HTTPException(status_code=400, detail="File too large. Maximum size is 50MB")
+
+        # Upload the audio file
+        url = await upload_file(
+            file_content=bytes(content),
+            filename=file.filename,
+            content_type=file.content_type
+        )
+
+        response = supabase.table("meetings").update({
+            "audio_url": url,
+            "updated_at": datetime.now().isoformat()
+        }).eq("id", meeting_id).execute()
+
+        if not response.data:
+            raise HTTPException(
+                status_code=404,
+                detail=f"Meeting with ID {meeting_id} not found"
+            )
+
+        return JSONResponse(
+            status_code=200,
+            content={
+                "message": "Audio file uploaded and meeting updated successfully",
+                "meeting_id": meeting_id,
+                "url": url
+            }
+        )
+
+    except HTTPException as he:
+        raise he
+    except Exception as e:
+        print(f"Unexpected error: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Unexpected error: {str(e)}")

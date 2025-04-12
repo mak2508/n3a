@@ -3,6 +3,8 @@ import { Meeting, MEETING_TYPES } from '../types';
 import { formatDate } from '../utils';
 import { Upload } from 'lucide-react';
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+
 interface MeetingDetailsProps {
   meeting: Meeting;
   onUpdate: (meeting: Meeting) => void;
@@ -20,58 +22,20 @@ export function MeetingDetails({ meeting, onUpdate }: MeetingDetailsProps) {
     setIsEditing(false);
   };
 
-  const simulateProcessing = async () => {
-    setIsProcessing(true);
-    
-    // Simulate transcription
-    setProcessingStep('Transcribing audio...');
-    for (let i = 0; i <= 30; i++) {
-      setProcessingProgress(i);
-      await new Promise(resolve => setTimeout(resolve, 100));
-    }
-    
-    // Simulate sentiment analysis
-    setProcessingStep('Analyzing sentiment...');
-    for (let i = 31; i <= 60; i++) {
-      setProcessingProgress(i);
-      await new Promise(resolve => setTimeout(resolve, 100));
-    }
-    
-    // Simulate summary generation
-    setProcessingStep('Generating summary...');
-    for (let i = 61; i <= 100; i++) {
-      setProcessingProgress(i);
-      await new Promise(resolve => setTimeout(resolve, 100));
-    }
-    
-    // Update meeting with mock data
-    const updatedMeeting = {
-      ...editedMeeting,
-      audioUrl: 'https://example.com/audio1.mp3',
-      transcript: 'This is a sample transcript generated from the uploaded audio...',
-      summary: 'Client expressed interest in retirement planning options and showed concern about market volatility. Overall positive attitude towards long-term investment strategies.',
-      sentiment: 85,
-      sentimentEvents: [
-        { timestamp: '00:30', event: 'Discussion of retirement goals', sentiment: 90 },
-        { timestamp: '01:15', event: 'Market volatility concerns', sentiment: 65 },
-        { timestamp: '02:45', event: 'Long-term strategy agreement', sentiment: 95 },
-      ],
-    };
-    
-    setEditedMeeting(updatedMeeting);
-    onUpdate(updatedMeeting);
-    setIsProcessing(false);
-  };
-
   const handleFileUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (!file) return;
 
     try {
+      setIsProcessing(true);
+      setProcessingStep('Uploading audio...');
+      setProcessingProgress(30);
+
       const formData = new FormData();
       formData.append('file', file);
 
-      const response = await fetch('http://localhost:8000/api/files/upload', {
+      // Upload file to the new endpoint
+      const response = await fetch(`${API_URL}/api/meetings/${meeting.id}/upload-audio`, {
         method: 'POST',
         body: formData,
       });
@@ -82,9 +46,34 @@ export function MeetingDetails({ meeting, onUpdate }: MeetingDetailsProps) {
 
       const data = await response.json();
       console.log('File uploaded successfully:', data);
-      // TODO: Update the meeting record with the file URL
+
+      // Update the meeting with the new audio URL
+      const updatedMeeting = {
+        ...meeting,
+        audio_url: data.url,
+      };
+
+      setEditedMeeting(updatedMeeting);
+      onUpdate(updatedMeeting);
+      
+      setProcessingStep('Processing complete!');
+      setProcessingProgress(100);
+      
+      // Reset processing state after a delay
+      setTimeout(() => {
+        setIsProcessing(false);
+        setProcessingStep('');
+        setProcessingProgress(0);
+      }, 2000);
+
     } catch (error) {
       console.error('Error uploading file:', error);
+      setProcessingStep('Error: ' + (error instanceof Error ? error.message : 'Upload failed'));
+      setProcessingProgress(0);
+      setTimeout(() => {
+        setIsProcessing(false);
+        setProcessingStep('');
+      }, 3000);
     }
   };
 
@@ -124,7 +113,7 @@ export function MeetingDetails({ meeting, onUpdate }: MeetingDetailsProps) {
         <div className="grid grid-cols-2 gap-6">
           <div>
             <label className="block text-sm font-medium text-gray-700">Client Name</label>
-            <p className="mt-1 text-lg">{meeting.clientName}</p>
+            <p className="mt-1 text-lg">{meeting.client_name}</p>
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700">Date</label>
@@ -134,9 +123,9 @@ export function MeetingDetails({ meeting, onUpdate }: MeetingDetailsProps) {
             <label className="block text-sm font-medium text-gray-700">Meeting Type</label>
             {isEditing ? (
               <select
-                value={editedMeeting.meetingType}
+                value={editedMeeting.meeting_type}
                 onChange={(e) =>
-                  setEditedMeeting({ ...editedMeeting, meetingType: e.target.value })
+                  setEditedMeeting({ ...editedMeeting, meeting_type: e.target.value })
                 }
                 className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
               >
@@ -147,7 +136,7 @@ export function MeetingDetails({ meeting, onUpdate }: MeetingDetailsProps) {
                 ))}
               </select>
             ) : (
-              <p className="mt-1 text-lg">{meeting.meetingType}</p>
+              <p className="mt-1 text-lg">{meeting.meeting_type}</p>
             )}
           </div>
           <div className="col-span-2">
@@ -179,10 +168,10 @@ export function MeetingDetails({ meeting, onUpdate }: MeetingDetailsProps) {
               </div>
               <p className="text-sm text-gray-600">{processingStep}</p>
             </div>
-          ) : meeting.audioUrl ? (
+          ) : meeting.audio_url ? (
             <div className="space-y-4">
               <audio controls className="w-full">
-                <source src={meeting.audioUrl} type="audio/mpeg" />
+                <source src={meeting.audio_url} type="audio/mpeg" />
                 Your browser does not support the audio element.
               </audio>
               
@@ -250,14 +239,15 @@ export function MeetingDetails({ meeting, onUpdate }: MeetingDetailsProps) {
                 type="file"
                 accept="audio/*"
                 className="hidden"
+                id="audio-upload"
                 onChange={handleFileUpload}
               />
-              <button
-                onClick={() => simulateProcessing()}
-                className="mt-2 inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+              <label
+                htmlFor="audio-upload"
+                className="mt-2 inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 cursor-pointer"
               >
                 Select File
-              </button>
+              </label>
             </div>
           )}
         </div>
