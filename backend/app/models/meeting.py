@@ -27,4 +27,19 @@ class Meeting(MeetingBase):
     sentiment_events: List[SentimentEvent] = []
 
     class Config:
-        from_attributes = True 
+        from_attributes = True
+        json_encoders = {
+            datetime: lambda dt: dt.isoformat()
+        }
+
+# New model for update operations
+class MeetingUpdate(BaseModel):
+    date: str  # Changed from datetime to str to match frontend
+    meeting_type: str
+    description: str
+
+    class Config:
+        from_attributes = True
+        json_encoders = {
+            datetime: lambda dt: dt.isoformat()
+        } 
