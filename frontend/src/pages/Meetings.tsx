@@ -81,7 +81,7 @@ export function Meetings() {
       console.log('Updating meeting with data:', {
         id: editedMeeting.id,
         date: editedMeeting.date,
-        meeting_type: editedMeeting.meetingType,
+        meeting_type: editedMeeting.meeting_type,
         description: editedMeeting.description
       });
       
@@ -93,7 +93,7 @@ export function Meetings() {
         },
         body: JSON.stringify({
           date: editedMeeting.date,
-          meeting_type: editedMeeting.meetingType,
+          meeting_type: editedMeeting.meeting_type,
           description: editedMeeting.description,
         }),
       });
@@ -148,8 +148,6 @@ export function Meetings() {
           ...editedMeeting,
           date: dateObj.toISOString(),
         });
-        
-        console.log('Updated date to:', dateObj.toISOString());
       } catch (err) {
         console.error('Error processing date:', err);
       }
@@ -186,13 +184,13 @@ export function Meetings() {
                 onClick={() => setSelectedMeeting(meeting)}
               >
                 <td className="px-6 py-4 whitespace-nowrap">
-                  <div className="text-sm font-medium text-gray-900">{meeting.clientName}</div>
+                  <div className="text-sm font-medium text-gray-900">{meeting.client_name}</div>
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap">
                   <div className="text-sm text-gray-500">{formatDate(meeting.date)}</div>
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap">
-                  <div className="text-sm text-gray-500">{meeting.meetingType}</div>
+                  <div className="text-sm text-gray-500">{meeting.meeting_type}</div>
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap">
                   {meeting.sentiment && (
@@ -240,7 +238,7 @@ export function Meetings() {
                 <div className="grid grid-cols-2 gap-6">
                   <div>
                     <h3 className="text-sm font-medium text-gray-500">Client Name</h3>
-                    <p className="mt-1 text-sm text-gray-900">{selectedMeeting.clientName}</p>
+                    <p className="mt-1 text-sm text-gray-900">{selectedMeeting.client_name}</p>
                   </div>
                   <div>
                     <h3 className="text-sm font-medium text-gray-500">Date & Time</h3>
@@ -266,9 +264,9 @@ export function Meetings() {
                     <h3 className="text-sm font-medium text-gray-500">Meeting Type</h3>
                     {isEditing ? (
                       <select
-                        value={editedMeeting?.meetingType || ''}
+                        value={editedMeeting?.meeting_type || ''}
                         onChange={(e) => 
-                          setEditedMeeting(prev => prev ? { ...prev, meetingType: e.target.value } : null)
+                          setEditedMeeting(prev => prev ? { ...prev, meeting_type: e.target.value } : null)
                         }
                         className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 text-sm"
                       >
@@ -279,7 +277,7 @@ export function Meetings() {
                         ))}
                       </select>
                     ) : (
-                      <p className="mt-1 text-sm text-gray-900">{selectedMeeting.meetingType}</p>
+                      <p className="mt-1 text-sm text-gray-900">{selectedMeeting.meeting_type}</p>
                     )}
                   </div>
                   <div>
@@ -306,12 +304,12 @@ export function Meetings() {
                   )}
                 </div>
 
-                {selectedMeeting.audioUrl && (
+                {selectedMeeting.audio_url && (
                   <div>
                     <h3 className="text-sm font-medium text-gray-500">Audio Recording</h3>
                     <div className="mt-2 bg-gray-100 rounded p-3">
                       <audio controls className="w-full">
-                        <source src={selectedMeeting.audioUrl} type="audio/mpeg" />
+                        <source src={selectedMeeting.audio_url} type="audio/mpeg" />
                         Your browser does not support the audio element.
                       </audio>
                     </div>
@@ -336,7 +334,7 @@ export function Meetings() {
                   </div>
                 )}
 
-                {selectedMeeting.sentimentEvents && selectedMeeting.sentimentEvents.length > 0 && (
+                {selectedMeeting.sentiment_events && selectedMeeting.sentiment_events.length > 0 && (
                   <div>
                     <h3 className="text-sm font-medium text-gray-500">Sentiment Events</h3>
                     <div className="mt-2 overflow-x-auto">
@@ -355,7 +353,7 @@ export function Meetings() {
                           </tr>
                         </thead>
                         <tbody className="bg-white divide-y divide-gray-200">
-                          {selectedMeeting.sentimentEvents.map((event, index) => (
+                          {selectedMeeting.sentiment_events.map((event, index) => (
                             <tr key={index}>
                               <td className="px-4 py-2 whitespace-nowrap text-sm text-gray-500">
                                 {event.timestamp}
