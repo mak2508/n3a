@@ -5,6 +5,10 @@ import { MeetingDetails } from './components/MeetingDetails';
 import { SentimentCloud } from './components/SentimentCloud';
 import { ChevronLeft, ChevronRight, ListChecks, BarChart } from 'lucide-react';
 import { useMeetings } from './hooks/useMeetings';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { ClientsPage } from './pages/Clients';
+import { MeetingsPage } from './pages/Meetings';
+import { SentimentsPage } from './pages/Sentiments';
 
 function App() {
   const { meetings, loading, error } = useMeetings();
@@ -47,98 +51,51 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-100 flex">
-      {/* Sidebar */}
-      <div 
-        className={`bg-white shadow-lg transition-all duration-300 flex ${
-          isSidebarCollapsed ? 'w-16' : 'w-64'
-        }`}
-      >
-        <div className="flex flex-col flex-grow">
-          <div className="p-4 border-b border-gray-200">
-            <h1 className={`font-bold text-gray-900 transition-opacity duration-300 ${
-              isSidebarCollapsed ? 'opacity-0' : 'text-xl'
-            }`}>
-              Navigation
-            </h1>
-          </div>
-          
-          <div className="flex-grow">
-            <button
-              onClick={() => setActiveTab('meetings')}
-              className={`w-full p-4 flex items-center gap-3 transition-colors ${
-                activeTab === 'meetings'
-                  ? 'bg-blue-50 text-blue-600'
-                  : 'text-gray-600 hover:bg-gray-50'
-              }`}
-            >
-              <ListChecks size={24} />
-              <span className={`transition-opacity duration-300 ${
-                isSidebarCollapsed ? 'opacity-0' : ''
-              }`}>
-                Meetings
-              </span>
-            </button>
-            
-            <button
-              onClick={() => setActiveTab('sentiment')}
-              className={`w-full p-4 flex items-center gap-3 transition-colors ${
-                activeTab === 'sentiment'
-                  ? 'bg-blue-50 text-blue-600'
-                  : 'text-gray-600 hover:bg-gray-50'
-              }`}
-            >
-              <BarChart size={24} />
-              <span className={`transition-opacity duration-300 ${
-                isSidebarCollapsed ? 'opacity-0' : ''
-              }`}>
-                Sentiment
-              </span>
-            </button>
-          </div>
-
-          <button
-            onClick={() => setIsSidebarCollapsed(!isSidebarCollapsed)}
-            className="p-4 text-gray-600 hover:bg-gray-50 flex items-center justify-center"
-          >
-            {isSidebarCollapsed ? (
-              <ChevronRight size={24} />
-            ) : (
-              <ChevronLeft size={24} />
-            )}
-          </button>
-        </div>
-      </div>
-
-      {/* Main Content */}
-      <div className="flex-grow p-6">
-        {activeTab === 'meetings' ? (
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            <div className="lg:col-span-1">
-              <MeetingList
-                meetings={meetings}
-                onSelectMeeting={setSelectedMeeting}
-                selectedMeetingId={selectedMeeting?.id}
-              />
-            </div>
-            <div className="lg:col-span-2">
-              {selectedMeeting ? (
-                <MeetingDetails
-                  meeting={selectedMeeting}
-                  onUpdate={handleUpdateMeeting}
-                />
-              ) : (
-                <div className="bg-white rounded-lg shadow p-6 text-center text-gray-500">
-                  Select a meeting to view details
+    <Router>
+      <div className="min-h-screen bg-gray-100">
+        <nav className="bg-white shadow-sm">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-between h-16">
+              <div className="flex">
+                <div className="flex-shrink-0 flex items-center">
+                  <Link to="/" className="text-xl font-bold text-gray-900">
+                    Meeting Analytics
+                  </Link>
                 </div>
-              )}
+                <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
+                  <Link
+                    to="/"
+                    className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-900"
+                  >
+                    Meetings
+                  </Link>
+                  <Link
+                    to="/sentiments"
+                    className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-900"
+                  >
+                    Sentiments
+                  </Link>
+                  <Link
+                    to="/clients"
+                    className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-900"
+                  >
+                    Clients
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
-        ) : (
-          <SentimentCloud meetings={meetings} />
-        )}
+        </nav>
+
+        <main>
+          <Routes>
+            <Route path="/" element={<MeetingsPage />} />
+            <Route path="/sentiments" element={<SentimentsPage />} />
+            <Route path="/clients" element={<ClientsPage />} />
+          </Routes>
+        </main>
       </div>
-    </div>
+    </Router>
   );
 }
 

@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from .api import meetings
+from .api import meetings, clients
 
 app = FastAPI(title="Meeting Analytics API")
 
@@ -14,4 +14,5 @@ app.add_middleware(
 )
 
 # Include routers
-app.include_router(meetings.router, prefix="/api", tags=["meetings"]) 
+app.include_router(meetings.router, prefix="/api", tags=["meetings"])
+app.include_router(clients.router, prefix="/api", tags=["clients"]) 
