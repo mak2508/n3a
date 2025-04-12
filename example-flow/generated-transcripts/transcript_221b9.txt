@@ -1,0 +1,23 @@
+Bank Agent: Good afternoon, Mrs. Carter! Thank you for coming in today. I wanted to share some insights about your financial planning options. [You’ve done a great job saving so far](positive, encouraging).  
+Mrs. Carter: Thank you. [I’ve been diligent about this for years](neutral, reflective). I just want to make sure I don’t overlook anything.  
+
+Bank Agent: Absolutely. I ran a few projections based on your current portfolio. [If you retire at 67, your investments could comfortably support your lifestyle](positive, optimistic).  
+Mrs. Carter: [That’s a relief](positive, reassured). But what if there are unexpected expenses, like medical bills or market changes? [I’ve heard so many stories about people running out of money](negative, worried).  
+
+Bank Agent: [You’re right to think about that](neutral, validating). Those are important factors, and that’s why I recommend we build a buffer into your retirement plan. We can also add lower-risk investments to stabilize your portfolio.  
+Mrs. Carter: [Lower risk?](neutral, curious). [Does that mean my returns won’t be as strong as they are now?](negative, uncertain).  
+
+Bank Agent: Possibly, but it’s about minimizing risk while maintaining steady growth. [This strategy ensures peace of mind even during market downturns](positive, reassuring). Ultimately, you’ll have more predictability in retirement.  
+Mrs. Carter: Hmm, okay. [I’ll admit I’m nervous about losing growth potential](negative, apprehensive). [But protecting my savings is important too](neutral, thoughtful).  
+
+Bank Agent: Exactly. [We can balance growth with protection](positive, reassuring). I can show you some projections where we adjust allocations. That way you’ll see a clearer picture of how this can meet your goals while still providing stability.  
+Mrs. Carter: [That sounds like a good idea](neutral, tentative). [I just want to feel secure in my decision](neutral, contemplative).  
+
+Bank Agent: Of course. Let’s shift gears for a moment—[have you thought about how you want to spend your retirement?](positive, encouraging) Travel, hobbies, family time?  
+Mrs. Carter: [Oh, yes! I’ve always dreamed of traveling around Europe](positive, excited). [But then I think about how expensive it might be](negative, hesitant).  
+
+Bank Agent: [Travel can be a wonderful goal](positive, affirming). And we can factor it into your budget. [With proper planning, there’s room for both enjoyment and security](positive, optimistic).  
+Mrs. Carter: [That would mean so much](positive, touched). [I don’t want to sacrifice my dreams because of money worries](neutral, reflective).  
+
+Bank Agent: And you don’t have to. [Together, we’ll create a retirement plan that balances aspirations and practicality](positive, encouraging).  
+Mrs. Carter: [Alright](neutral, resolved). [Let’s go ahead and work on this plan](positive, determined).  

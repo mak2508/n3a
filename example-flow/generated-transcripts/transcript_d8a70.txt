@@ -1,0 +1,22 @@
+Bank Agent: Good afternoon, Ms. Harper! Thank you for coming in today. I’ve been reviewing your account and portfolio, and there’s some great progress to discuss—[your investments have seen steady growth](positive, happy).  
+Ms. Harper: Really? That’s good to hear. [I’ve been wondering if I’m doing enough](neutral, reflective).  
+
+Bank Agent: Absolutely, you’re on a solid track. But I noticed you don’t yet have a specific retirement plan mapped out. [It’s never too early to start planning for that](neutral, encouraging).  
+Ms. Harper: [Oh, retirement](neutral, uncertain). [Sometimes I feel like I won’t have enough… especially with rising costs](negative, worried).  
+
+Bank Agent: I understand. It’s a common concern. But the good news is—[with a tailored strategy, you’re closer to your goals than you might realize](positive, reassuring). For example, we can consider diversifying your portfolio a bit more or increasing your contributions to maximize returns.  
+Ms. Harper: [Closer than I realize?](neutral, interested) [That’s a relief… though it still feels like a gamble sometimes](neutral, cautious).  
+
+Bank Agent: True, there’s always some risk in investments, but we can carefully balance that with safe options and a long-term perspective. [It’s all about finding the formula that works for your comfort level](positive, reassuring).  
+Ms. Harper: [Comfort level?](neutral, curious) [I guess I’m just afraid I’ll misstep somewhere and hurt my future](negative, anxious).  
+
+Bank Agent: That’s totally natural to feel. Let’s talk about safeguards—like an emergency fund, or low-risk bonds to protect your core savings. [Protecting you emotionally as much as financially is my priority](positive, empathetic).  
+Ms. Harper: [Okay… I didn’t realize how much we could structure things to help with stability](neutral, thoughtful). [That does ease some of the anxiety](positive, relieved).  
+
+Bank Agent: Exactly. There’s also the matter of setting realistic goals—we can calculate how much you’ll need annually and adjust based on inflation. [That way, you’ll have confidence in your future](positive, optimistic).  
+Ms. Harper: [Confidence sounds nice](neutral, hopeful)… [It’s a lot to think about](neutral, overwhelmed), but [it’s good to know I don’t have to figure it all out by myself](positive, reassured).  
+
+Bank Agent: You certainly don’t. That’s what I’m here for. And once we start putting together the plan, you’ll see how manageable everything can become. [We’ll make retirement a secure and rewarding chapter for you](positive, motivating).  
+Ms. Harper: [Thank you for explaining all this](positive, appreciative). [I guess I feel a bit more hopeful now](positive, hopeful). Let’s start working on it.  
+
+Bank Agent: Wonderful! [This is an important step toward a future that’s both financially secure and fulfilling](positive, encouraging). I’ll send over some initial projections and strategies for us to begin with.

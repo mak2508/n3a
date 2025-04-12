@@ -1,0 +1,23 @@
+Bank Agent: Hello, Mrs. Johnson! I’ve been reviewing your financial records, and I want to congratulate you—you’ve done an excellent job saving over the years. [You’ve set yourself up very well](positive, happy).  
+Mrs. Johnson: Oh, thank you! That’s nice to hear. [I was really worried I wasn’t doing enough](neutral, relieved).  
+
+Bank Agent: Well, based on your current portfolio, if you’re looking to retire at 67, you’re in good shape to maintain your lifestyle.  
+Mrs. Johnson: [That’s such a relief](positive, grateful). [I’ve always had this fear of running out of money too soon](negative, anxious).  
+
+Bank Agent: I understand that’s a common concern. However, I do want to mention that there are a couple of areas that could present challenges—for example, if inflation spikes or healthcare costs increase, we may need to reassess the plan. [These variables can affect your long-term financial security](neutral, cautious).  
+Mrs. Johnson: [Oh no](negative, worried)... [I thought I’d accounted for everything](negative, uncertain). [Do you think I need to work longer?](negative, anxious).  
+
+Bank Agent: Not necessarily! [You’re not far off from where you need to be](positive, reassuring). A few adjustments, like diversifying your investments or increasing contributions for the last few working years, might be helpful.  
+Mrs. Johnson: [I guess that sounds manageable](neutral, apprehensive)... [I just really wanted to start traveling as soon as I retire](negative, wistful).  
+
+Bank Agent: And you absolutely can, Mrs. Johnson. [With some careful planning, we can make those trips happen while maintaining your financial peace of mind](positive, encouraging).  
+Mrs. Johnson: [That’s great to hear](positive, hopeful). [I just don’t want to feel tied down by restrictions as I go through retirement](neutral, reflective).  
+
+Bank Agent: I completely understand that. That’s why I’d suggest we build a flexible budget. We could allocate extra funds for travel in the first few years and scale back later if necessary.  
+Mrs. Johnson: [Hmm, that seems fair](neutral, pondering)… [But I’d still like to have a backup plan if something unexpected comes up](neutral, cautious).  
+
+Bank Agent: Absolutely—we’ll include a contingency fund specifically for unforeseen expenses. [That way, you can move forward confidently](positive, reassuring).  
+Mrs. Johnson: [That sounds perfect](positive, satisfied). [Thank you for taking the time to explain all of this](positive, grateful).  
+
+Bank Agent: My pleasure, Mrs. Johnson. [Helping you achieve the retirement you’ve dreamed about is why we’re here](positive, dedicated).  
+Mrs. Johnson: Alright, let’s put this plan into action. [I feel more confident now than I did when we started this conversation](positive, resolved).

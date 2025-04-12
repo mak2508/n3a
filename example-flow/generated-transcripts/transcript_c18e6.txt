@@ -1,0 +1,23 @@
+Bank Agent: Good afternoon, Ms. Roberts! I'm glad you could stop by today. I've been reviewing your portfolio and there are quite a few opportunities we could discuss—[we’ll tailor this to your goals](positive, encouraging).  
+Ms. Roberts: Thank you. I'm really hoping to make the most of my investments. [But honestly, I’m feeling a little overwhelmed with all the options](negative, uncertain).  
+
+Bank Agent: I understand—it’s a lot to consider. Let’s take it step by step. One thing that stood out is how diversified your portfolio is already. [That’s a strong start](positive, affirming).  
+Ms. Roberts: [Oh, that’s good to hear](positive, reassured). I’ve worked hard to get to this point.  
+
+Bank Agent: Absolutely. Now, I noticed you’ve expressed interest in retirement planning—is that still your focus?  
+Ms. Roberts: Yes, it is. [I want to make sure I’m prepared](neutral, concerned). [But I’m worried I might not have saved enough](negative, anxious).  
+
+Bank Agent: Many people feel that way, especially in times like these. Let me show you our projections based on your current savings and investment rate. If you retire at 67, you’re on track for a stable retirement. [You’ve done quite well](positive, encouraging).  
+Ms. Roberts: [Wow, really?](positive, surprised) [That’s a relief](positive, relieved).  
+
+Bank Agent: That said, there are always external risks—market fluctuations, healthcare costs, inflation. [These factors may require small adjustments later on](neutral, cautious).  
+Ms. Roberts: [Oh… I didn’t think about that](negative, thoughtful). [I thought my plan was pretty solid](negative, uncertain).  
+
+Bank Agent: It is solid, but the goal here is resilience—building flexibility into your plan so you’re ready for any surprises. [We can strategize to reduce risk exposure slightly or set up a reserve fund](positive, empowering).  
+Ms. Roberts: [That makes sense](neutral, reflective). [I just don’t want this to end up being a mistake](negative, worried).  
+
+Bank Agent: It won’t. [You’re taking all the right steps by planning ahead and working with someone who can guide you](positive, supportive).  
+Ms. Roberts: [Thank you](positive, grateful). [I feel a little better now](positive, reassured).  
+
+Bank Agent: You’re very welcome. And remember, with small adjustments over time we can make sure your retirement is both secure and enjoyable.  
+Ms. Roberts: [Okay, let’s do this](positive, determined). [I want to retire feeling confident](positive, hopeful).  

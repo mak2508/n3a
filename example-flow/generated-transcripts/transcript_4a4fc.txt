@@ -1,0 +1,16 @@
+Bank Agent: Good afternoon, Mrs. Johnson! I reviewed your financial portfolio earlier today, and there’s a lot of potential for growth. [You’ve done a fantastic job saving over the years](positive, encouraging).  
+Mrs. Johnson: Oh, thank you! [I’ve tried my best](neutral, modest). But honestly, I’ve been feeling overwhelmed—[am I on the right track for retirement?](neutral, uncertain).  
+Bank Agent: I understand how tricky it can feel. Let’s dive in. Based on your current savings and investments, you’re definitely on track—but there are a few areas we could optimize to ensure peace of mind. [For example, diversifying a bit more could strengthen your financial safety net](neutral, helpful).   
+Mrs. Johnson: [Hmm… diversify? Do I need to move things around?](neutral, hesitant). [I always thought I should keep things simple](neutral, reflective).  
+Bank Agent: Simplicity often works well, and you’re not far off. But a modest adjustment—like reallocating some funds to safer, income-generating investments—could reduce risk as you approach retirement age. [This way, you’re not overly reliant on market trends](positive, reassuring).  
+Mrs. Johnson: [Okay, that sounds reasonable](neutral, accepting). [But what about unexpected costs—like healthcare or inflation?](negative, worried).  
+Bank Agent: Excellent question. Rising costs are definitely a concern. [It’s why I suggest we add a buffer to your portfolio—maybe increase your emergency fund to cover about two years of expenses](neutral, pragmatic).  
+Mrs. Johnson: [Two years? That feels like a lot](negative, overwhelmed). [I don’t think I’d be able to set aside that much](negative, doubtful).  
+Bank Agent: It doesn’t have to be immediate! [We can build toward it gradually, little by little, over the next few years](positive, reassuring). [The goal is to have something in place that makes you feel secure](positive, encouraging).  
+Mrs. Johnson: [Gradually… okay, that’s more manageable](neutral, thoughtful).  
+Bank Agent: Absolutely. And if we also tweak your mix of investments to prioritize stability and monthly income, you’ll find that retirement funds stretch much further. [You’ll feel much more confident entering this next phase](positive, optimistic).  
+Mrs. Johnson: [I really hope so](neutral, cautious). [Honestly, I still worry about running out of money when I’m older](negative, anxious).  
+Bank Agent: That’s completely normal, Mrs. Johnson. [But with proper planning, your finances can cover your needs—and then some](positive, confident). [Remember, we’re creating a long-term plan that can adapt if circumstances change](positive, comforting).  
+Mrs. Johnson: [Thank you](neutral, relieved). [I appreciate having someone to guide me through all of this](positive, appreciative).  
+Bank Agent: It’s what I’m here for! [Together, we’ll make sure your retirement is as stress-free and enjoyable as possible](positive, supportive).  
+Mrs. Johnson: [All right, let’s move forward with your recommendations](positive, resolved). [I’m feeling better about this already](positive, optimistic).  

@@ -1,0 +1,14 @@
+Bank Agent: Good afternoon, Mrs. Thompson! I’ve reviewed your financials in their entirety, and you’ve done a great job saving over the years—[truly commendable work](positive, appreciative).  
+Mrs. Thompson: Thank you. [That’s good to hear](positive, relieved). I’ve worked hard to get to this point. But… [I do still worry about whether it’s truly enough as I near retirement](neutral, anxious).  
+Bank Agent: I completely understand. It’s a big milestone, and feeling uncertain is normal. Now, looking at your investments, if you continue on your current path, retiring at 65 should be very achievable, with plenty of comfort and security.  
+Mrs. Thompson: [That’s reassuring](positive, relieved). [Still, I keep hearing about inflation and rising costs of healthcare](neutral, worried). How can I be sure I won’t run out of money?  
+Bank Agent: That’s a valid concern. [To be honest](neutral, serious), we may need to add some layers to your plan—adjust for things like potential increases in healthcare expenses or unexpected market fluctuations.  
+Mrs. Thompson: [Wait… adjustments?](negative, uncertain). [I thought everything was mapped out already](negative, uneasy). [Now I feel less confident](negative, discouraged).  
+Bank Agent: I hear you, Mrs. Thompson. [But this is actually an opportunity](positive, calming). By preparing for worst-case scenarios ahead of time, you can feel more secure and protected. Think of it as fine-tuning—not major changes.  
+Mrs. Thompson: [Alright, I see your point](neutral, thoughtful). [It’s still unsettling, though](negative, hesitant). I was hoping planning for retirement wouldn’t feel like this much of a risk…  
+Bank Agent: [And I promise](positive, reassuring) our job here is to minimize that risk. For example, we could look into diversifying your investments a bit more or consider creating a “cushion fund” specifically for unforeseen events.  
+Mrs. Thompson: [That sounds promising](neutral, reflective). [A cushion fund might make me feel better](positive, optimistic).  
+Bank Agent: Absolutely. And we’ll take it step by step. Together, we’ll design a strategy that’s both protective and flexible—giving you the freedom to enjoy retirement without stress.  
+Mrs. Thompson: [That’s really all I want](neutral, hopeful). I want to relax and live comfortably without worrying about running out of funds twenty years in.  
+Bank Agent: And you will. [I guarantee it’s possible with the right plan](positive, supportive). Let’s refine the details and make your vision for retirement a reality.  
+Mrs. Thompson: [Okay then… let’s do it](positive, resolved).

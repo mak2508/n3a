@@ -1,0 +1,31 @@
+Bank Agent: Good morning, Ms. Reynolds. I’ve reviewed your portfolio and your plans for retirement. First, let me say—[you’ve done an excellent job saving and investing over the years](positive, encouraging).  
+
+Ms. Reynolds: Thank you. [That’s good to hear](positive, relieved). But honestly, [I’m nervous... retirement feels so uncertain](negative, anxious).  
+
+Bank Agent: [I completely understand](positive, reassuring). It’s a big life transition. That’s why we’re here to ensure you have clarity and confidence in your financial future. I noticed you’re interested in retiring at 62—[if we map everything carefully, that’s absolutely possible](positive, optimistic).  
+
+Ms. Reynolds: [Really?](positive, surprised) [I was worried it might be too soon](negative, doubtful). Healthcare costs, inflation... [it feels overwhelming sometimes](negative, anxious).  
+
+Bank Agent: [It’s normal to feel that way](positive, empathetic). The good news is that we’ve anticipated those factors. You’ve got strong investments, and we could further optimize by potentially shifting a portion of your portfolio into assets that grow with inflation.  
+
+Ms. Reynolds: [Optimize?](neutral, curious) [What does that mean exactly?](neutral, uncertain)  
+
+Bank Agent: Great question. Think of it this way: currently, a sizable portion of your portfolio is in low-risk options, which is good for stability, but we can diversify to generate a bit more growth over time. For example, adding dividend-paying stocks or inflation-protected bonds. [This will provide a balance of security and growth](positive, pragmatic).  
+
+Ms. Reynolds: [I see...](neutral, reflective) [but what if the market dips? I don’t think I can stomach big losses at this stage of life](negative, apprehensive).  
+
+Bank Agent: That’s totally valid. [We won’t expose you to unnecessary risk](positive, reassuring). In fact, one approach could be a "bucket strategy"—we’d ensure your short-term income needs are in secure, low-risk investments, while longer-term assets have time to grow.  
+
+Ms. Reynolds: [That sounds... safer](neutral, thoughtful). [I do like the idea of having income I can rely on immediately](neutral, cautious).  
+
+Bank Agent: Exactly. And here’s another exciting thing—[with your current savings, you’d likely have room for occasional travel or hobbies in retirement](positive, encouraging). Things that bring joy and fulfillment.  
+
+Ms. Reynolds: [Really? That’s wonderful](positive, happy). I was worried I’d spend retirement cutting back on everything.  
+
+Bank Agent: [Not at all](positive, reassuring). Of course, we’d keep monitoring things to ensure you stay on track, but with proper planning, there’s plenty of reason to feel confident.  
+
+Ms. Reynolds: [That’s such a relief](positive, relieved). [Although I still feel nervous about the unknowns, I trust your guidance](neutral, hopeful).  
+
+Bank Agent: [That’s what I’m here for](positive, supportive). With the right strategies in place, your retirement can be not just secure, but also very rewarding. Would you like to move forward with refining the plan?  
+
+Ms. Reynolds: [Yes, let’s do it](positive, resolved). [It’s time I focus on enjoying this next chapter of my life](positive, optimistic).

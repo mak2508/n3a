@@ -1,0 +1,16 @@
+Bank Agent: Good afternoon, Ms. Carter! Thank you for coming in today. I’ve been reviewing your accounts and potential retirement plans. [You’re in a solid position](positive, encouraging).  
+Ms. Carter: That sounds good. [I’ve worked so hard to get here](neutral, reflective). I just hope I’ve made the right choices so far.  
+Bank Agent: From what I see, you’ve made some strong decisions. But I did notice that your portfolio is heavily weighted in stocks. [If the market takes a downturn, it could affect your retirement timeline](neutral, concerned).  
+Ms. Carter: [Oh… I didn’t think of that](negative, uncertain). [I’ve always just trusted the market to work itself out](neutral, apprehensive).  
+Bank Agent: That’s a common approach, but as you get closer to retirement, adjusting for stability becomes more important. [We can shift some of those investments to more secure options, like bonds or dividend-paying stocks](positive, reassuring).  
+Ms. Carter: [I guess that makes sense](neutral, contemplative). [But if I move funds now, won’t I miss out on the potential growth?](negative, hesitant).  
+Bank Agent: Possibly, but not necessarily. It’s about balance—keeping some growth while protecting what you’ve built. [It’s more like shifting the weight of your safety net](positive, reassuring).  
+Ms. Carter: [I’d really hate to lose value after all these years](negative, worried). [Sometimes I feel like I’m just guessing with all of this](negative, uncertain).  
+Bank Agent: [You’re not alone](positive, empathetic). The key is having a clear strategy. Also, with your pension estimates and Social Security, [you’re already looking at a comfortable baseline income in retirement](positive, reassuring).  
+Ms. Carter: [That’s a relief](positive, reassured). [But what about unexpected health costs or long-term care? Those things scare me](negative, anxious).  
+Bank Agent: That’s a smart concern. [To cover that, we could look into long-term care insurance or designate a portion of savings as an emergency healthcare fund](positive, problem-solving).  
+Ms. Carter: [I guess that would help](neutral, thoughtful). [It just feels overwhelming sometimes, figuring out all of this by myself](negative, overwhelmed).  
+Bank Agent: I understand. [That’s why I’m here—to make it clear and manageable for you](positive, supportive). We can take this one step at a time. How about we prioritize your immediate concerns today and build from there?  
+Ms. Carter: [Okay, that sounds good](positive, relieved). [Thanks for explaining it all—it already feels a little less daunting](positive, appreciative).  
+Bank Agent: Of course. [With the right adjustments, your retirement can be as secure and fulfilling as you’ve always imagined](positive, encouraging).  
+Ms. Carter: [Then let’s get started](positive, resolved). [I want to do this the right way](neutral, determined).  

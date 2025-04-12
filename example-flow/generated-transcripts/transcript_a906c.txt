@@ -1,0 +1,23 @@
+Bank Agent: Good afternoon, Mrs. Stevens! I hope you're doing well today. [It's always a pleasure to assist you with planning for your future](positive, warm).  
+Mrs. Stevens: Thank you, it's great to be here. I've been thinking a lot about my retirement lately... [just hoping I'm making the right decisions](neutral, reflective).  
+
+Bank Agent: Your concern is completely valid. Let me start by saying you've done a great job saving so far. [You're definitely ahead of many people your age](positive, encouraging).  
+Mrs. Stevens: Really? [That makes me feel better](positive, relieved). I was worried I wasn't doing enough.  
+
+Bank Agent: Definitely. Now, based on your current assets, if you retire in 8 years as planned, you'll likely be able to maintain your lifestyle comfortably. [However, we need to account for inflation and fluctuating markets](neutral, cautious).  
+Mrs. Stevens: [Oh… I hadn't considered inflation](negative, uncertain). Will that take a huge chunk out of my savings?  
+
+Bank Agent: It can have an impact over time, but that's why we plan well in advance. [If we adjust your portfolio slightly to hedge against that, you'll be in a stronger position](positive, reassuring).  
+Mrs. Stevens: I see. [I just get nervous about changing my investments… what if it's a bad decision?](neutral, anxious).  
+
+Bank Agent: That's understandable. But the changes we’d make would be gradual, and we’d diversify more into lower-risk options. [I would never recommend something I don’t believe aligns with your goals](positive, empathetic).  
+Mrs. Stevens: [Alright… I trust you](neutral, tentative). I really do want to make the most of retirement.  
+
+Bank Agent: And you will. Speaking of making the most of it, have you thought about allocating some funds for travel or hobbies? [It could be an exciting way to use your savings](positive, enthusiastic).  
+Mrs. Stevens: [Oh, I hadn't thought about that—travel does sound nice](positive, happy). But then I wonder… [what if unexpected healthcare costs come up?](negative, worried).  
+
+Bank Agent: That's a good point. We can create a special reserve just for healthcare needs. [That way you'll always have peace of mind, no matter what happens](positive, calming).  
+Mrs. Stevens: [That would really ease my mind](positive, relieved). Thanks for suggesting it.  
+
+Bank Agent: Of course. [Our goal is to make sure your retirement years are secure and enjoyable](positive, assuring). So, shall we get started on fine-tuning your plan?  
+Mrs. Stevens: [Yes, let's do it](positive, determined). [I feel so much better about the future now](positive, optimistic).

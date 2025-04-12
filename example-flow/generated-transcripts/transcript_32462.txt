@@ -1,0 +1,37 @@
+Bank Agent: Good afternoon, Mrs. Collins! It’s great to see you again. I’ve been reviewing your financial profile, and I think we’re in a good spot to discuss options for retirement planning. [Shall we get started?](positive, inviting)
+
+Mrs. Collins: Good afternoon! Sure. I’ve been thinking a lot about retirement lately—[it feels both exciting and a little scary](neutral, honest).
+
+Bank Agent: That’s completely understandable. Retirement planning can bring up mixed emotions. Let me start with some good news: based on your current savings and investments, you’re on track to maintain your desired lifestyle for at least 20 years after retirement. [You’re in a strong position](positive, encouraging).
+
+Mrs. Collins: Oh, that’s great to hear! [I’ve worked so hard to get here](positive, proud). But, wait—what happens after those 20 years? [What if I live longer than that?](negative, concerned)
+
+Bank Agent: A good point, and one we’ll address. That’s why I recommend creating a contingency plan. For instance, we could explore annuities that guarantee income for life, or reallocate part of your portfolio to more conservative, long-term investments. [There are options to ensure you won’t outlive your savings](positive, reassuring).
+
+Mrs. Collins: Hmm. [I didn’t realize I might have to shift things around](neutral, reflective). But I see your point… [I just don’t want to feel like I’m constantly worrying about finances in my old age](negative, apprehensive).
+
+Bank Agent: Absolutely. [Our goal is to give you peace of mind](positive, reassuring). By planning proactively now, you’ll reduce those worries later. If it helps, I’ve also run projections that account for various scenarios—like unexpected healthcare costs or market downturns. You’re still in a solid position to be secure. [Does that help ease your mind?](positive, encouraging)
+
+Mrs. Collins: [It does, a little](neutral, mildly reassured). But… [I kept hoping that by now, I’d feel 100% confident](negative, uncertain).
+
+Bank Agent: Confidence comes with knowing you’re prepared for life’s surprises. [And that’s exactly what we’re doing here](positive, empowering). Let’s talk about investments—did you want to adjust your risk exposure as you approach retirement?
+
+Mrs. Collins: Yes, I suppose I should… [Although, it’s hard to give up the growth potential. I’m torn](neutral, conflicted).
+
+Bank Agent: I hear you. Growth has been your strategy for years, and it’s served you well. [Adjusting doesn’t mean abandoning growth entirely, though](positive, clarifying). It just means finding a balance—keeping some growth-focused investments while shifting others toward stability. This way, [you’ll safeguard what you’ve worked so hard to build](positive, reassuring).
+
+Mrs. Collins: Hmm… [I can see how that makes sense](neutral, considering). [I guess I do feel better knowing I won’t lose everything if the market crashes](positive, slightly reassured).
+
+Bank Agent: Absolutely! [The key is diversifying while aligning your portfolio with your goals](positive, confident). And speaking of goals—have you thought about how you want to spend your retirement years? Travel? Volunteer work? Family time?
+
+Mrs. Collins: Yes, I have! I’d love to travel more… [but I keep wondering if there will be enough money to cover it all](negative, uncertain).
+
+Bank Agent: That’s where strategic budgeting comes in. We’ll carve out funds specifically for travel and other discretionary expenses. And if you’d like, [we can set up an annual review to make sure your withdrawals match your lifestyle needs](positive, supportive).
+
+Mrs. Collins: [That sounds helpful](neutral, thoughtful). I think I could have more confidence if we’re checking annually. [Thank you for understanding what I’ve been feeling](positive, grateful).
+
+Bank Agent: Of course, Mrs. Collins. [Your retirement should be a time of fulfillment and security](positive, optimistic). With the steps we’re taking today, you’ll be ready to enjoy every moment without unnecessary stress.
+
+Mrs. Collins: [Alright, let’s move forward with the plan](positive, resolved). [I feel better knowing we’re tackling this proactively](positive, reassured).
+
+Bank Agent: Wonderful! Let’s finalize the action steps together—[this is going to set you up for success](positive, motivating).

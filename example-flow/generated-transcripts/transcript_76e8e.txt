@@ -1,0 +1,20 @@
+Bank Agent: Good afternoon, Mrs. Reynolds! Thank you for stopping by. I’ve taken a close look at your financial situation. You're in a good spot, but we might need to discuss planning adjustments for retirement. [I think you'll find this reassuring](positive, encouraging).  
+Mrs. Reynolds: Thank you. I've been thinking a lot about retirement lately… [I hope I'm on track](neutral, uncertain).  
+
+Bank Agent: Based on our assessments, if you retire at age 67—which aligns with your current plan—you should be able to maintain your current lifestyle. [Congratulations on your diligent saving over the years!](positive, uplifting).  
+Mrs. Reynolds: [Oh, that's such a relief](positive, relieved). [For a while, I’ve been afraid I’d need to work well into my seventies](negative, anxious).  
+
+Bank Agent: You’ve done a fantastic job preparing, but there are a couple of factors we need to consider. Healthcare costs are projected to rise significantly, and the market might experience volatility. [We should plan for flexibility when it comes to withdrawals](neutral, cautious).  
+Mrs. Reynolds: [Healthcare costs… volatility… that makes me nervous](negative, worried). [I thought retiring was supposed to feel simple](negative, disappointed).  
+
+Bank Agent: [I understand completely—it can feel overwhelming](positive, empathetic). That’s why we’re here. We can look into defensive investment strategies, setting up emergency reserves, or adjusting the risk in your portfolio. You still have options for protecting your future.  
+Mrs. Reynolds: [Hmm… I hadn’t thought about it like that](neutral, reflective). [But is it enough to give me peace of mind?](negative, uncertain).  
+
+Bank Agent: Absolutely. Let’s focus on creating a personalized plan. For example, we could stagger your withdrawals, or allocate more toward conservative investments that buffer against major market swings. [This way, you'll have a stronger safety net](positive, reassuring).  
+Mrs. Reynolds: [That does sound better](neutral, slightly relieved), though I’ll admit [I’m still a little scared](negative, hesitant) about the unknowns.  
+
+Bank Agent: That fear is normal, but with a solid strategy in place, we’ll mitigate any surprises. [Your retirement can be as secure and joyful as you’ve always envisioned](positive, inspiring).  
+Mrs. Reynolds: [Yes, that’s what I want](neutral, hopeful). [I want time with family and freedom to explore without worrying over money](neutral, reflective).  
+
+Bank Agent: And you will. [Together, we’ll make sure your retirement plan works exactly the way you need it to—safe, sustainable, and flexible](positive, confident).  
+Mrs. Reynolds: [Alright, let’s move forward with this plan](positive, resolved). [Thank you for helping me feel more at ease](positive, grateful).

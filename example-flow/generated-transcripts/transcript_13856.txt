@@ -1,0 +1,20 @@
+Bank Agent: Good morning, Ms. Carter! Thank you for coming in. I've been reviewing your portfolio, and I must say, you've done quite well in accumulating wealth over the years—[congratulations!](positive, happy)  
+Ms. Carter: Thank you. It feels good to hear that after all the effort I’ve put in—[but I still feel a little unsure if it’s enough](neutral, uncertain).  
+
+Bank Agent: That’s understandable. Many people worry about retirement planning. Let me assure you, based on your savings and current investments, you're in a very strong position to retire comfortably at 65.  
+Ms. Carter: [Really? That’s a relief](positive, relieved). [I’ve always worried if something unexpected could disrupt my plans](neutral, anxious).  
+
+Bank Agent: Yes, unexpected expenses can happen, but the good news is we can plan for that. For instance, adding a healthcare buffer or looking into annuities for stable cash flow in retirement.  
+Ms. Carter: [Annuities? Healthcare buffer? That sounds complicated](neutral, apprehensive). [I thought my portfolio was already enough to guarantee stability](neutral, uncertain).  
+
+Bank Agent: It’s actually simpler than it sounds. These are just safeguards to ensure you’re completely covered. Markets fluctuate, and healthcare costs can rise, so it’s wise to have a contingency plan.  
+Ms. Carter: [The markets?] (negative, nervous) [That reminds me when everything crashed years ago—I don’t want to lose what I’ve worked so hard for](negative, anxious).  
+
+Bank Agent: I hear you. That was a tough time for many. But with the right diversification and lower-risk investments as you approach retirement, your portfolio will be designed to withstand turbulence. We can also review your current risk tolerance and make tweaks.  
+Ms. Carter: [I don’t know… it still feels risky](negative, uncertain). [I just want to be sure I can trust this plan](negative, skeptical).  
+
+Bank Agent: That’s perfectly fair. The adjustments I’m suggesting are specifically tailored to your goals. [Ultimately, this plan is about giving you peace of mind and the freedom to enjoy your retirement without financial stress](positive, reassuring).  
+Ms. Carter: [Okay, that does sound reassuring](neutral, cautious). [I want to feel secure as I age](neutral, reflective).  
+
+Bank Agent: And you will. Let me walk you through how these adjustments can work, step by step. Once we implement them, you’ll have a stronger foundation for a secure retirement lifestyle.  
+Ms. Carter: [Alright. That sounds more doable](positive, relieved). [Let’s move forward with the plan](positive, resolved).  

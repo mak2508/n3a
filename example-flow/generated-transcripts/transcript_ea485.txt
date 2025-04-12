@@ -1,0 +1,27 @@
+Bank Agent: Good afternoon, Mrs. Carter! I’ve been reviewing your accounts, and I think we should talk about your financial goals—particularly retirement planning. [You’ve done a terrific job saving over the years](positive, encouraging).
+
+Mrs. Carter: Oh, thank you. [I’ve tried to be really disciplined about it](neutral, reflective). But [I still wonder sometimes if I’m saving enough](neutral, uncertain).
+
+Bank Agent: That’s very common to feel, Mrs. Carter. Let’s take a closer look. [Based on your current savings and investment portfolio, you’re actually in a strong position for retirement](positive, optimistic).
+
+Mrs. Carter: [Really? That’s good to hear](positive, relieved). [I’ve been so worried I wouldn’t have enough to live comfortably](negative, worried).
+
+Bank Agent: I understand that concern. [However, there are a few variables we’ll want to account for—like inflation, healthcare costs, and market fluctuations](neutral, cautious).
+
+Mrs. Carter: [Oh... I hadn’t thought about those](negative, uncertain). [Does that mean I need to save a lot more?](negative, anxious)
+
+Bank Agent: Not necessarily. [We might only need to make a few tweaks to your investment strategy](positive, reassuring). For example, [we could shift a portion of your portfolio to give you more growth potential while still maintaining stability](neutral, explanatory).
+
+Mrs. Carter: [But isn’t that risky?](negative, hesitant) [I’m close to retiring; what if there’s a market crash?](negative, fearful)
+
+Bank Agent: That’s a valid concern. [We’ll ensure your portfolio has the right balance—one that minimizes risk but keeps you on track for growth](positive, confident). And [we’ll build a safety net, like an emergency fund specifically tied to your retirement](positive, reassuring).
+
+Mrs. Carter: [Okay, I guess that makes sense](neutral, tentative). [I do feel nervous about changing too much, though](negative, hesitant).
+
+Bank Agent: I hear you, Mrs. Carter, and we’ll take this step by step. [It’s all about creating a plan that lets you feel secure while also staying adaptable to the future](positive, reassuring).
+
+Mrs. Carter: [Alright, that sounds better](positive, encouraged). [I just want to feel confident that I won’t run out of money](neutral, reflective).
+
+Bank Agent: And you will! [With this revised strategy, I’m confident we can set you up for a retirement that’s both enjoyable and worry-free](positive, inspiring).
+
+Mrs. Carter: Thank you. [That would mean a lot to me](positive, appreciative). [Let’s move forward with this](positive, resolved).

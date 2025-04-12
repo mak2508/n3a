@@ -1,0 +1,19 @@
+Bank Agent: Good afternoon, Ms. Carter! It's great to see you again. I’ve reviewed your financial situation, and it seems you're in a good position to start planning for retirement in detail—[congrats!](positive, happy).  
+Ms. Carter: Thanks, that’s good to hear. [Retirement feels like a big step](neutral, reflective). I just want to make sure I don’t miss anything.  
+
+Bank Agent: Absolutely, and that's why I'm here. Based on your current savings, investments, and pension accounts, you’re on track for a comfortable retirement.  
+Ms. Carter: [That's great news](positive, relieved). But [I’m worried about healthcare costs](neutral, anxious)—they seem to keep going up. Will I be able to handle them?  
+
+Bank Agent: That’s an important point. While you have solid assets, [if there are unforeseen expenses like extended healthcare or market downturns, we might need to adjust your strategy](neutral, cautious).  
+Ms. Carter: [Adjustments?](negative, surprised) [I thought everything was smooth sailing](negative, uncertain). [Now I feel unsure about what to expect](negative, anxious).  
+
+Bank Agent: [I totally understand how unsettling it can be](positive, empathetic). But the good news is that we can plan for flexibility—set aside funds for unexpected costs, diversify investments, and incorporate safeguards.  
+Ms. Carter: [Hmm…okay](neutral, reflective). [I just don’t want to end up struggling financially after working so hard](negative, worried).  
+
+Bank Agent: And that’s what we’re aiming to avoid. Let’s focus on ensuring you have a cushion for unexpected situations while maintaining growth in your portfolio. [With the right approach, you'll be well-prepared](positive, optimistic).  
+Ms. Carter: [That sounds reassuring](positive, relieved). [I want to enjoy my retirement, not worry about money constantly](neutral, thoughtful).  
+
+Bank Agent: Exactly, Ms. Carter. Let’s also factor in long-term goals like travel or family support. [Retirement is your time to enjoy life, and careful planning will make that possible](positive, encouraging).  
+Ms. Carter: [You’re right](positive, accepting). [I’m feeling more confident in the plan now](positive, hopeful).  
+Bank Agent: That’s great to hear. I’ll draft an adjusted strategy and share it with you during our next meeting. [Together, we’ll make sure every detail aligns with your goals](positive, supportive).  
+Ms. Carter: Alright! [Let’s move forward with it](positive, resolved).  

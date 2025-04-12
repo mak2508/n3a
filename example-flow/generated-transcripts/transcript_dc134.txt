@@ -1,0 +1,20 @@
+Bank Agent: Good morning, Mrs. Bennett! I’ve been reviewing your account and looking at retirement planning options. [I see you've been diligent about saving over the years](positive, encouraging).  
+Mrs. Bennett: Thank you. [I’ve worked hard to put aside what I can](neutral, reflective). But [I still worry—is it going to be enough?](negative, anxious).  
+
+Bank Agent: That’s a very common concern, and [you’re not alone in feeling that way](positive, reassuring). Based on what we’ve calculated so far, you’re in a strong position to meet most of your goals, especially with a smart investment strategy.  
+Mrs. Bennett: [That’s good to hear](positive, relieved). [Sometimes it feels like I’ve done all I can, but it’s still so uncertain](neutral, reflective).  
+
+Bank Agent: True—retirement planning involves balancing many variables. [One area we might want to talk about is the allocation of your investments](neutral, professional). Shifting some funds could make a real difference, especially if you're open to exploring moderate growth options.  
+Mrs. Bennett: [Moderate growth?](neutral, curious). I don’t want to take too much risk. [Losses at this stage would scare me](negative, fearful).  
+
+Bank Agent: Completely understandable. [We don’t want to do anything that would make you uncomfortable](positive, reassuring). But a balanced approach could help combat inflation and ensure your savings last longer.  
+Mrs. Bennett: [Inflation—that really worries me](negative, worried). [Everything keeps getting more expensive, and I don’t want to cut corners in retirement](neutral, concerned).  
+
+Bank Agent: Exactly, and that’s why [we’re here to put safeguards in place](positive, supportive). For example, we could allocate a portion of your funds into investments designed to grow steadily over time while keeping a portion in safer assets.  
+Mrs. Bennett: [That sounds reasonable](positive, thoughtful). [I just want to feel secure](neutral, hopeful) without taking any big risks.  
+
+Bank Agent: Of course. Security and peace of mind are our priorities. [The good news is you’re already on track](positive, optimistic). With a few tweaks, we should be able to create a plan that keeps you financially safe and gives you room to enjoy retirement fully.  
+Mrs. Bennett: [That makes me feel better](positive, relieved). [It hasn’t been easy getting to this point, but I really want to enjoy these years](neutral, reflective).  
+
+Bank Agent: And you absolutely deserve to. [With the right strategy, you’ll have both stability and the freedom to take the retirement trips or experiences you’ve dreamed of](positive, encouraging).  
+Mrs. Bennett: [Alright, let’s move forward with this plan](positive, resolved). I trust you to guide me through it all. Thank you.  

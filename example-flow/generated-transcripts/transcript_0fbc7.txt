@@ -1,0 +1,37 @@
+Bank Agent: Good afternoon, Ms. Carter! It's always a pleasure to see you. [You have some exciting options ahead when it comes to planning your future](positive, welcoming).
+
+Ms. Carter: Thank you. It's good to be here. [Honestly, I've been feeling a little unsure about what steps to take next](neutral, uncertain).
+
+Bank Agent: That's perfectly understandable. These decisions can feel overwhelming, but [you're in a great position to make powerful choices](positive, encouraging). Let's go over retirement planning first. How are you feeling about that?
+
+Ms. Carter: [Well, I’ve been saving diligently, but I still worry about whether it’s enough](negative, anxious).
+
+Bank Agent: I hear that concern often, but [I’ve crunched the numbers, and it looks like you’re ahead of the curve](positive, reassuring). If you retire at 67, your savings combined with your investments could cover your current lifestyle comfortably.
+
+Ms. Carter: [That’s amazing](positive, relieved). Thank you for saying that! But, [what about unexpected expenses—healthcare costs, emergencies?](neutral, cautious)
+
+Bank Agent: Great question. [Those are important factors to consider, but we can include a contingency fund in your plan](neutral, pragmatic). Adding a buffer will ensure you're protected.
+
+Ms. Carter: [I like the sound of that, but I’m still nervous](neutral, hesitant). [What happens if the market drops significantly? I’d hate to lose years of hard-earned savings](negative, worried).
+
+Bank Agent: Your concern is valid, and that's why we emphasize diversification. [I recommend shifting a portion of your portfolio into more conservative investments as you near retirement](neutral, strategic). This lowers your overall risk.
+
+Ms. Carter: [I see… that sounds smart](neutral, reflective). [I guess I’ve always been scared to make changes to what I know](negative, apprehensive). 
+
+Bank Agent: That’s natural. But the good news is, [adjustments like these are about stability, not risk-taking](positive, reassuring). And you won’t need to handle it alone—I’ll guide you every step of the way.
+
+Ms. Carter: [Okay, that gives me some peace of mind](positive, relieved). [But retirement is such a huge shift. How do I even prepare emotionally?](neutral, uncertain)
+
+Bank Agent: That’s an excellent point. [It’s not just about money—it’s about creating a lifestyle you’ll love](positive, holistic). Think about hobbies, travel, time with loved ones. We’ll factor those dreams into your financial plan, too.
+
+Ms. Carter: [That’s really comforting to hear](positive, grateful). [I’ve always wanted to travel more, maybe visit Europe… but will I really be able to afford it?](neutral, hopeful yet doubtful)
+
+Bank Agent: [With the right strategy, absolutely](positive, optimistic). We can allocate funds specifically for dreams like that, so you can enjoy them guilt-free. You’ve worked hard to get here.
+
+Ms. Carter: [That sounds wonderful](positive, excited). [I hope it’s as good as it sounds—even if the unexpected happens](neutral, cautiously hopeful).
+
+Bank Agent: It will be. We’ll build in flexibility to your plan, so [you’re always in control, no matter what life throws your way](positive, empowering).
+
+Ms. Carter: [Alright. I’m ready to move forward](positive, resolved). Let’s do this.
+
+Bank Agent: I’m thrilled to hear that! [You’re making choices that will truly secure and enhance your future](positive, celebratory). Let me finalize a few things, and we’ll be one step closer to turning your goals into reality.

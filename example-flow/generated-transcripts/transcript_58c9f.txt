@@ -1,0 +1,31 @@
+Bank Agent: Good morning, Ms. Taylor! Thank you for coming in today. I’ve been reviewing your retirement and investment portfolio. [You've done a fantastic job building it up over the years](positive, encouraging).
+
+Ms. Taylor: Thank you, I’ve worked hard for this. [I just hope it’s enough to retire comfortably](neutral, hopeful).
+
+Bank Agent: I believe it’s very achievable. If you stick to your current plan, retiring at age 65 should give you a solid financial base. [You’ll be able to maintain your lifestyle and even travel if you wish](positive, reassuring).
+
+Ms. Taylor: [That’s great to hear](positive, relieved). I’ve always dreamed of spending my retirement visiting the places I love. [Still, it’s a little nerve-wracking uncertain if unforeseen costs could derail my plans](neutral, worried).
+
+Bank Agent: That’s understandable. Healthcare costs, market fluctuations—those are common concerns many retirees face. [But we can put safeguards in place](positive, reassuring). For instance, diversifying your investments more or including an emergency fund.
+
+Ms. Taylor: [Hmm, I never thought about that](neutral, contemplative). [It seems scary to think about finances failing just when I stop earning](negative, anxious).
+
+Bank Agent: [You're not alone in feeling that way](positive, empathetic). These are big life changes, but that’s why building a flexible strategy now can remove those fears later. [What if we run some calculations showing worst-case scenarios?](neutral, constructive)
+
+Ms. Taylor: [Worst-case scenarios?](negative, apprehensive) [That sounds intimidating](negative, nervous).
+
+Bank Agent: [It’s simply preparation](positive, calming). It allows us to proactively manage risks, so you can enjoy peace of mind knowing you’re covered if surprises ever arise.
+
+Ms. Taylor: [That makes sense](neutral, understanding). [It’s really important to me to not have to constantly worry about money in retirement](neutral, reflective).
+
+Bank Agent: Exactly. [With the right planning, you’ll be free to focus on what truly matters—your hobbies, your family, your travels](positive, optimistic).
+
+Ms. Taylor: [That does sound wonderful](positive, hopeful). [I want to make this work](positive, motivated). How do we get started?
+
+Bank Agent: We’ll begin by adjusting your portfolio slightly—lower exposure to risk for safety, but still allowing growth where possible. We can also create a staggered withdrawal plan. [With these steps, you’ll feel confident heading into retirement](positive, reassuring).
+
+Ms. Taylor: [Yes, let’s do this](positive, determined). [Knowing I'll have that security lifts a huge weight off my shoulders](positive, relieved).
+
+Bank Agent: Absolutely. [Your future looks bright, Ms. Taylor](positive, encouraging). Let’s finalize the details—you’ll be retiring with confidence and peace of mind.
+
+Ms. Taylor: [Thank you so much for your guidance](positive, grateful). [I feel much better about my retirement already](positive, optimistic).
