@@ -113,15 +113,13 @@ async def update_meeting(meeting_id: str, meeting_update: MeetingUpdate):
 
         if not update_response.data:
             raise HTTPException(status_code=500, detail="Failed to update meeting")
-
         # Fetch the updated meeting with client name
         updated_meeting_response = supabase.table("meetings") \
             .select("*, clients!inner(name)") \
             .eq("id", meeting_id) \
             .single() \
             .execute()
-            
-        updated_meeting = updated_meeting_response.data[0]
+        updated_meeting = updated_meeting_response.data
         updated_meeting["client_name"] = updated_meeting["clients"]["name"]
         del updated_meeting["clients"]
 
