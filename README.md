@@ -55,7 +55,7 @@ yarn install
 cd backend
 uv venv
 source .venv/bin/activate # On Windows: .venv\Scripts\activate
-uv pip sync uv.lock
+uv pip install -r pyproject.toml
 ```
 
 ## Running the Application
@@ -102,57 +102,24 @@ The frontend will be available at `http://localhost:5173`
 
 ## Environment Variables
 
-The application uses the following environment variables:
+Create a `.env` file in the root directory with the following variables:
 
-- `SUPABASE_URL`: Your Supabase project URL
-- `SUPABASE_ANON_KEY`: Your Supabase project anon/public key
-- `SUPABASE_SERVICE_ROLE_KEY`: Your Supabase service role key
-- `SUPABASE_PASSWORD`: Your database password
-- `VITE_SUPABASE_URL`: Frontend Supabase URL (same as SUPABASE_URL)
-- `VITE_SUPABASE_ANON_KEY`: Frontend Supabase anon key (same as SUPABASE_ANON_KEY)
-- `OPENAI_API_KEY`: Your OpenAI API key for NLP and sentiment analysis
-- `HF_API_KEY`: Your Hugging Face API key for AI models
-- `AZURE_API_KEY`: Your Azure API key for Azure AI services
-- `AZURE_ENDPOINT`: Your Azure endpoint URL for Azure AI services
+```bash
+# Supabase
+SUPABASE_URL=your_supabase_url
+SUPABASE_ANON_KEY=your_supabase_anon_key
+SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key
+
+# Azure
+AZURE_API_KEY=your_azure_api_key
+AZURE_ENDPOINT=your_azure_endpoint
+
+# OpenAI
+OPENAI_API_KEY=your_openai_api_key
+```
+
+You can get these values from your Supabase project settings and respective service providers.
 
 ## Development
 
-- Backend API documentation is available at `http://localhost:8000/docs`
-- Frontend hot-reloading is enabled during development
-- Database migrations should be applied using Supabase CLI
-
-## Contributing
-
-1. Create a new branch for your feature
-2. Make your changes
-3. Submit a pull request
-
-## License
-
-[MIT](LICENSE)
-
-## Example Environment Variables (.env.example)
-
-```
-# Supabase Configuration
-SUPABASE_URL=your-project-url
-SUPABASE_ANON_KEY=your-anon-key
-SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
-SUPABASE_PASSWORD=your-db-password
-
-# Frontend Configuration (Vite requires VITE_ prefix)
-VITE_SUPABASE_URL=${SUPABASE_URL}
-VITE_SUPABASE_ANON_KEY=${SUPABASE_ANON_KEY}
-
-# Optional: Service Role Key (for admin operations, never use in client-side code)
-# SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
-
-# Development Database Password (if using local development)
-# SUPABASE_PASSWORD=your-db-password
-
-# AI Model API Keys
-OPENAI_API_KEY=your-openai-api-key
-HF_API_KEY=your-hugging-face-key
-AZURE_API_KEY=your-azure-api-key
-AZURE_ENDPOINT=your-azure-endpoint-url
-```
+- Backend API documentation is available at `
