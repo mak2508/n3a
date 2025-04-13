@@ -17,16 +17,30 @@ router = APIRouter()
 @router.get("/meetings", response_model=List[Meeting])
 async def get_meetings():
     try:
-        # Fetch meetings
-        meetings_response = supabase.table("meetings").select("*").order("date", desc=True).execute()
+        # Fetch meetings with client name through foreign key
+        meetings_response = supabase.table("meetings") \
+            .select("*, clients!inner(name)") \
+            .order("date", desc=True) \
+            .execute()
+        
         meetings = meetings_response.data
+
+        # Process the response to match our model
+        processed_meetings = []
+        for meeting in meetings:
+            processed_meeting = {
+                **meeting,
+                "client_name": meeting["clients"]["name"]
+            }
+            del processed_meeting["clients"]
+            processed_meetings.append(processed_meeting)
 
         # Fetch sentiment events
         sentiment_response = supabase.table("sentiment_events").select("*").execute()
         sentiment_events = sentiment_response.data
 
         # Combine meetings with their sentiment events
-        for meeting in meetings:
+        for meeting in processed_meetings:
             meeting["sentiment_events"] = [
                 SentimentEvent(
                     start_index=event["start_index"],
@@ -37,7 +51,7 @@ async def get_meetings():
                 if event["meeting_id"] == meeting["id"]
             ]
 
-        return meetings
+        return processed_meetings
     except Exception as e:
         print(f"Error in get_meetings: {str(e)}")  # Add debug logging
         raise HTTPException(status_code=500, detail=str(e))
@@ -45,19 +59,26 @@ async def get_meetings():
 @router.get("/meetings/{meeting_id}", response_model=Meeting)
 async def get_meeting(meeting_id: str):
     try:
-        # Fetch meeting
-        meeting_response = supabase.table("meetings").select("*").eq("id", meeting_id).single().execute()
+        # Fetch meeting with client name through foreign key
+        meeting_response = supabase.table("meetings") \
+            .select("*, clients!inner(name)") \
+            .eq("id", meeting_id) \
+            .single() \
+            .execute()
+            
         if not meeting_response.data:
             raise HTTPException(status_code=404, detail="Meeting not found")
         
         meeting = meeting_response.data
+        meeting["client_name"] = meeting["clients"]["name"]
+        del meeting["clients"]
 
         # Fetch sentiment events for this meeting
         sentiment_response = supabase.table("sentiment_events").select("*").eq("meeting_id", meeting_id).execute()
         meeting["sentiment_events"] = [
             SentimentEvent(
-                timestamp=event["timestamp"],
-                event=event["event"],
+                start_index=event["start_index"],
+                end_index=event["end_index"],
                 sentiment=event["sentiment"]
             )
             for event in sentiment_response.data
@@ -93,14 +114,23 @@ async def update_meeting(meeting_id: str, meeting_update: MeetingUpdate):
         if not update_response.data:
             raise HTTPException(status_code=500, detail="Failed to update meeting")
 
-        updated_meeting = update_response.data[0]
+        # Fetch the updated meeting with client name
+        updated_meeting_response = supabase.table("meetings") \
+            .select("*, clients!inner(name)") \
+            .eq("id", meeting_id) \
+            .single() \
+            .execute()
+            
+        updated_meeting = updated_meeting_response.data[0]
+        updated_meeting["client_name"] = updated_meeting["clients"]["name"]
+        del updated_meeting["clients"]
 
         # Fetch sentiment events for this meeting to include in response
         sentiment_response = supabase.table("sentiment_events").select("*").eq("meeting_id", meeting_id).execute()
         updated_meeting["sentiment_events"] = [
             SentimentEvent(
-                timestamp=event["timestamp"],
-                event=event["event"],
+                start_index=event["start_index"],
+                end_index=event["end_index"],
                 sentiment=event["sentiment"]
             )
             for event in sentiment_response.data

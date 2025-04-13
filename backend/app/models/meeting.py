@@ -10,7 +10,7 @@ class SentimentEvent(BaseModel):
     end_index: int
 
 class MeetingBase(BaseModel):
-    client_name: str
+    client_id: str
     date: datetime
     meeting_type: str
     description: str
@@ -27,6 +27,7 @@ class Meeting(MeetingBase):
     created_at: datetime
     updated_at: datetime
     sentiment_events: List[SentimentEvent] = []
+    client_name: Optional[str] = None  # This will be populated from the join
 
     class Config:
         from_attributes = True

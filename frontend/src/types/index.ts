@@ -30,7 +30,8 @@ export interface SentimentEvent extends BaseEntity {
 }
 
 export interface Meeting extends BaseEntity {
-    client_name: string;
+    client_id: string;
+    client_name: string | null;
     date: string;
     meeting_type: MeetingType;
     description: string;
