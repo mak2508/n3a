@@ -18,8 +18,8 @@ dependencies = [
     "torch>=2.2.0",  # Required by torchaudio
     "torchaudio>=2.2.0; python_version >= '3.8'",  # With Python version constraint
     "openai>=1.12.0",
-    "exceptiongroup>=1.0.0; python_version < '3.11'",  # Only needed for Python <3.11
-    "soundfile>=0.12.1"  # Required for WAV file support
+    "exceptiongroup>=1.0.0",
+    "soundfile>=0.12.1"
 ]
 
 [project.optional-dependencies]

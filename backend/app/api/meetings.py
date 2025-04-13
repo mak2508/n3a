@@ -156,6 +156,22 @@ async def upload_meeting_audio(meeting_id: str, file: UploadFile = File(...)):
                 detail="Invalid file type. Only audio files are allowed."
             )
 
+        # First, fetch the meeting to get the client_id
+        meeting_response = supabase.table("meetings").select("*, clients!inner(name)").eq("id", meeting_id).single().execute()
+        
+        if not meeting_response.data:
+            raise HTTPException(
+                status_code=404,
+                detail=f"Meeting with ID {meeting_id} not found"
+            )
+        
+        meeting = meeting_response.data
+        client_id = meeting["client_id"]
+        client_name = meeting["clients"]["name"]
+        
+        # Create a default client description since the column doesn't exist in the database
+        client_description = f"Client named {client_name}"
+
         # Read file in chunks to handle large files
         file_size = 0
         content = bytearray()
@@ -174,10 +190,21 @@ async def upload_meeting_audio(meeting_id: str, file: UploadFile = File(...)):
             temp_path = temp_file.name
 
         try:
-            # Process audio and get analysis results
-            analysis_results = process_audio(temp_path)
-            dos = analysis_results.get("dos", [])
-            donts = analysis_results.get("donts", [])
+            # Process audio and get analysis results - now with client_id and description
+            analysis_results = process_audio(temp_path, client_id, client_description)
+            
+            # Check for errors in processing
+            if "error" in analysis_results:
+                print(f"Audio processing error: {analysis_results['error']}")
+                raise HTTPException(
+                    status_code=500,
+                    detail=f"Error processing audio: {analysis_results['error']}"
+                )
+            
+            analysis = analysis_results.get("analysis", "")
+            dos_donts = analysis_results.get("dos_donts", {})
+            dos = dos_donts.get("dos", [])
+            donts = dos_donts.get("donts", [])
 
             # Upload to storage and get URL
             file_path = f"{datetime.now().strftime('%Y%m%d_%H%M%S')}_{file.filename}"
@@ -188,9 +215,10 @@ async def upload_meeting_audio(meeting_id: str, file: UploadFile = File(...)):
                 print(f"Upload error: {upload_error}")
                 url = None
 
-            # Update meeting record
+            # Update meeting record with analysis and URL
             update_data = {
                 "updated_at": datetime.now().isoformat(),
+                "transcript": analysis,  # Store the analyzed transcript
                 **({"audio_url": url} if url else {})
             }
 
