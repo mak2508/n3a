@@ -1,9 +1,11 @@
 import os
 import sys
+import subprocess
+import tempfile
 
-from models.openai_models import ModelOpenAI
-from models.hf_models import ModelHF
-from models.azure_models import ModelAzure
+from .models.openai_models import ModelOpenAI
+from .models.hf_models import ModelHF
+from .models.azure_models import ModelAzure
 
 def initialize_models():
     """Initialize models with warning suppression"""
@@ -44,7 +46,7 @@ def annotations2analysis(transcript, audio_events):
         5. Add emotional context in parentheses (sentiment, tone) after each bracketed section
         6. Remove all audio cue annotations (AUDIO_CONTEXT: ...) from the final transcript
         7. Ensure the final output contains only clean conversation text with emotional analysis
-
+a
         Example format:
         Bank Agent: Good afternoon, Ms. Taylor! Thank you for coming in today. I had the chance to review your portfolio—it's looking solid overall. [You've done a great job managing your finances so far](positive, encouraging).
 
@@ -118,26 +120,41 @@ def analyze_dos_and_donts(text: str) -> dict:
                 donts.append(line.strip())
     return {"dos": dos, "donts": donts}
 
+def convert_to_wav(input_path):
+    file_ext = os.path.splitext(input_path)[1].lower()
+    if file_ext == '.wav':
+        return input_path
+
+    with tempfile.NamedTemporaryFile(delete=False, suffix='.wav') as wav_file:
+        wav_path = wav_file.name
+    
+    try:
+        subprocess.run(
+            ["ffmpeg", "-i", input_path, "-acodec", "pcm_s16le", "-ar", "44100", wav_path],
+            check=True, capture_output=True
+        )
+        return wav_path
+    except subprocess.CalledProcessError as e:
+        if os.path.exists(wav_path):
+            os.unlink(wav_path)
+        raise ValueError(f"Audio conversion failed: {e.stderr.decode() if e.stderr else str(e)}")
+
 def process_audio(audio_path):
     """Process audio file through the entire pipeline"""
     try:
         initialize_models()
-        transcript = audio2text(audio_path)
-        audio_events = audio2annotations(audio_path)
-        analysis = annotations2analysis(transcript, audio_events)
-        dos_donts = analyze_dos_and_donts(analysis)
-        return dos_donts
+        
+        wav_path = convert_to_wav(audio_path)
+        is_converted = wav_path != audio_path
+        
+        try:
+            transcript = audio2text(wav_path)
+            audio_events = audio2annotations(wav_path)
+            analysis = annotations2analysis(transcript, audio_events)
+            dos_donts = analyze_dos_and_donts(analysis)
+            return dos_donts
+        finally:
+            if is_converted and os.path.exists(wav_path):
+                os.unlink(wav_path)
     except Exception as e:
         return {"error": str(e)}
-
-# def main():
-#     if len(sys.argv) != 2:
-#         print("Usage: python main.py <audio_file_path>", file=sys.stderr)
-#         sys.exit(1)
-        
-#     audio_path = sys.argv[1]
-#     result = process_audio(audio_path)
-#     print(result)
-
-# if __name__ == "__main__":
-#     main()
