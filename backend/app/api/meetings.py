@@ -21,19 +21,16 @@ async def get_meetings():
         meetings_response = supabase.table("meetings").select("*").order("date", desc=True).execute()
         meetings = meetings_response.data
 
-        print(f"Meetings: {meetings}")
         # Fetch sentiment events
         sentiment_response = supabase.table("sentiment_events").select("*").execute()
         sentiment_events = sentiment_response.data
-
-        print(f"Sentiment events: {sentiment_events}")
 
         # Combine meetings with their sentiment events
         for meeting in meetings:
             meeting["sentiment_events"] = [
                 SentimentEvent(
-                    timestamp=event["timestamp"],
-                    event=event["event"],
+                    start_index=event["start_index"],
+                    end_index=event["end_index"],
                     sentiment=event["sentiment"]
                 )
                 for event in sentiment_events
