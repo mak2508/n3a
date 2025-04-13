@@ -3,8 +3,8 @@ from typing import Optional, List
 from datetime import datetime
 
 class SentimentEvent(BaseModel):
-    id: str
-    meeting_id: str
+    id: Optional[str] = None
+    meeting_id: Optional[str] = None
     sentiment: str
     start_index: int
     end_index: int

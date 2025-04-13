@@ -12,29 +12,60 @@ interface MeetingDetailsProps {
 
 export function MeetingDetails({ meeting, onUpdate }: MeetingDetailsProps) {
   const [isEditing, setIsEditing] = useState(false);
-  const [editedMeeting, setEditedMeeting] = useState(meeting);
-  const [isProcessing, setIsProcessing] = useState(false);
-  const [processingStep, setProcessingStep] = useState('');
-  const [processingProgress, setProcessingProgress] = useState(0);
+  const [editedMeeting, setEditedMeeting] = useState<Meeting | null>(null);
+  const [saveStatus, setSaveStatus] = useState<'idle' | 'saving' | 'success' | 'error'>('idle');
+  const [uploadStatus, setUploadStatus] = useState<{
+    isUploading: boolean;
+    progress: number;
+    currentStep: 'uploading' | 'transcribing' | 'analyzing' | 'summarizing' | 'completed' | 'error';
+  }>({
+    isUploading: false,
+    progress: 0,
+    currentStep: 'uploading'
+  });
 
-  const handleSave = () => {
-    onUpdate(editedMeeting);
-    setIsEditing(false);
+  const handleSave = async () => {
+    if (!editedMeeting) return;
+
+    setSaveStatus('saving');
+    try {
+      const response = await fetch(`${API_URL}/api/meetings/${meeting.id}`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          date: editedMeeting.date,
+          meeting_type: editedMeeting.meeting_type,
+          description: editedMeeting.description,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to update meeting');
+      }
+
+      const updatedMeeting = await response.json();
+      onUpdate(updatedMeeting);
+      setIsEditing(false);
+      setSaveStatus('success');
+    } catch (error) {
+      console.error('Error:', error);
+      setSaveStatus('error');
+    }
   };
 
-  const handleFileUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
-    if (!file) return;
-
+  const handleFileUpload = async (file: File) => {
     try {
-      setIsProcessing(true);
-      setProcessingStep('Uploading audio...');
-      setProcessingProgress(30);
+      setUploadStatus({
+        isUploading: true,
+        progress: 0,
+        currentStep: 'uploading'
+      });
 
       const formData = new FormData();
       formData.append('file', file);
 
-      // Upload file to the new endpoint
       const response = await fetch(`${API_URL}/api/meetings/${meeting.id}/upload-audio`, {
         method: 'POST',
         body: formData,
@@ -45,213 +76,233 @@ export function MeetingDetails({ meeting, onUpdate }: MeetingDetailsProps) {
       }
 
       const data = await response.json();
-      console.log('File uploaded successfully:', data);
+      setUploadStatus(prev => ({ ...prev, progress: 100, currentStep: 'completed' }));
 
       // Update the meeting with the new audio URL
-      const updatedMeeting = {
+      onUpdate({
         ...meeting,
-        audio_url: data.url,
-      };
+        audio_url: data.url
+      });
 
-      setEditedMeeting(updatedMeeting);
-      onUpdate(updatedMeeting);
-      
-      setProcessingStep('Processing complete!');
-      setProcessingProgress(100);
-      
-      // Reset processing state after a delay
+      // Reset upload status after a delay
       setTimeout(() => {
-        setIsProcessing(false);
-        setProcessingStep('');
-        setProcessingProgress(0);
+        setUploadStatus({
+          isUploading: false,
+          progress: 0,
+          currentStep: 'uploading'
+        });
       }, 2000);
 
     } catch (error) {
-      console.error('Error uploading file:', error);
-      setProcessingStep('Error: ' + (error instanceof Error ? error.message : 'Upload failed'));
-      setProcessingProgress(0);
-      setTimeout(() => {
-        setIsProcessing(false);
-        setProcessingStep('');
-      }, 3000);
+      console.error('Error:', error);
+      setUploadStatus(prev => ({
+        ...prev,
+        isUploading: false,
+        currentStep: 'error'
+      }));
     }
   };
 
+  const renderHighlightedTranscript = () => {
+    if (!meeting.transcript) return null;
+
+    let lastIndex = 0;
+    const segments = [];
+
+    // Sort sentiment events by start_index to process them in order
+    const sortedEvents = [...meeting.sentiment_events].sort((a, b) => a.start_index - b.start_index);
+
+    console.log(sortedEvents);
+    console.log(meeting.transcript);
+
+    sortedEvents.forEach((event, index) => {
+      // Add text before the sentiment event
+      if (event.start_index > lastIndex) {
+        segments.push(
+          <span key={`text-${index}`}>
+            {meeting.transcript!.slice(lastIndex, event.start_index)}
+          </span>
+        );
+      }
+
+      // Add the highlighted sentiment event
+      const sentimentValue = parseInt(event.sentiment);
+      const backgroundColor = sentimentValue > 50 ? 'bg-green-100' : 'bg-red-100';
+      segments.push(
+        <span
+          key={`event-${index}`}
+          className={`${backgroundColor} px-1 rounded`}
+          title={`Sentiment: ${event.sentiment}%`}
+        >
+          {meeting.transcript!.slice(event.start_index, event.end_index)}
+        </span>
+      );
+
+      lastIndex = event.end_index;
+    });
+
+    // Add any remaining text after the last sentiment event
+    if (lastIndex < meeting.transcript!.length) {
+      segments.push(
+        <span key="remaining">
+          {meeting.transcript!.slice(lastIndex)}
+        </span>
+      );
+    }
+
+    return (
+      <div className="mt-4">
+        <h3 className="text-sm font-medium text-gray-500">Transcript</h3>
+        <div className="mt-2 p-4 bg-gray-50 rounded-lg whitespace-pre-wrap">
+          {segments}
+        </div>
+      </div>
+    );
+  };
+
   return (
-    <div className="bg-white rounded-lg shadow p-6">
-      <div className="space-y-6">
-        <div className="flex justify-between items-center">
-          <h2 className="text-2xl font-bold text-gray-900">Meeting Details</h2>
+    <div className="bg-white shadow rounded-lg p-6">
+      <div className="flex justify-between items-start mb-6">
+        <div>
+          <h2 className="text-2xl font-bold text-gray-900">
+            {isEditing ? (
+              <input
+                type="text"
+                value={editedMeeting?.client_name || ''}
+                onChange={(e) => setEditedMeeting(prev => prev ? { ...prev, client_name: e.target.value } : null)}
+                className="block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+              />
+            ) : (
+              meeting.client_name
+            )}
+          </h2>
+          <p className="text-sm text-gray-500">
+            {isEditing ? (
+              <input
+                type="date"
+                value={editedMeeting?.date || ''}
+                onChange={(e) => setEditedMeeting(prev => prev ? { ...prev, date: e.target.value } : null)}
+                className="mt-1 block rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+              />
+            ) : (
+              formatDate(meeting.date)
+            )}
+          </p>
+        </div>
+        <div className="flex space-x-4">
           {isEditing ? (
-            <div className="space-x-2">
+            <>
               <button
                 onClick={handleSave}
-                className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+                disabled={saveStatus === 'saving'}
+                className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
               >
-                Save
+                {saveStatus === 'saving' ? 'Saving...' : 'Save'}
               </button>
               <button
                 onClick={() => {
                   setIsEditing(false);
-                  setEditedMeeting(meeting);
+                  setEditedMeeting(null);
                 }}
-                className="px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300"
+                className="px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
               >
                 Cancel
               </button>
-            </div>
+            </>
           ) : (
             <button
-              onClick={() => setIsEditing(true)}
-              className="px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300"
+              onClick={() => {
+                setEditedMeeting(meeting);
+                setIsEditing(true);
+              }}
+              className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
             >
               Edit
             </button>
           )}
         </div>
+      </div>
 
-        <div className="grid grid-cols-2 gap-6">
-          <div>
-            <label className="block text-sm font-medium text-gray-700">Client Name</label>
-            <p className="mt-1 text-lg">{meeting.client_name}</p>
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700">Date</label>
-            <p className="mt-1 text-lg">{formatDate(meeting.date)}</p>
-          </div>
-          <div className="col-span-2">
-            <label className="block text-sm font-medium text-gray-700">Meeting Type</label>
-            {isEditing ? (
-              <select
-                value={editedMeeting.meeting_type}
-                onChange={(e) =>
-                  setEditedMeeting({ ...editedMeeting, meeting_type: e.target.value })
-                }
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-              >
-                {MEETING_TYPES.map((type) => (
-                  <option key={type} value={type}>
-                    {type}
-                  </option>
-                ))}
-              </select>
-            ) : (
-              <p className="mt-1 text-lg">{meeting.meeting_type}</p>
-            )}
-          </div>
-          <div className="col-span-2">
-            <label className="block text-sm font-medium text-gray-700">Description</label>
-            {isEditing ? (
-              <textarea
-                value={editedMeeting.description}
-                onChange={(e) =>
-                  setEditedMeeting({ ...editedMeeting, description: e.target.value })
-                }
-                rows={4}
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-              />
-            ) : (
-              <p className="mt-1 text-lg">{meeting.description}</p>
-            )}
-          </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <h3 className="text-sm font-medium text-gray-500">Meeting Type</h3>
+          {isEditing ? (
+            <select
+              value={editedMeeting?.meeting_type || ''}
+              onChange={(e) => setEditedMeeting(prev => prev ? { ...prev, meeting_type: e.target.value } : null)}
+              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            >
+              {MEETING_TYPES.map((type) => (
+                <option key={type} value={type}>
+                  {type}
+                </option>
+              ))}
+            </select>
+          ) : (
+            <p className="mt-1 text-sm text-gray-900">{meeting.meeting_type}</p>
+          )}
         </div>
 
-        <div className="border-t pt-6">
-          <h3 className="text-lg font-medium text-gray-900 mb-4">Audio Recording</h3>
-          {isProcessing ? (
-            <div className="space-y-4">
-              <div className="w-full bg-gray-200 rounded-full h-2.5">
-                <div
-                  className="bg-blue-600 h-2.5 rounded-full transition-all duration-300"
-                  style={{ width: `${processingProgress}%` }}
-                ></div>
-              </div>
-              <p className="text-sm text-gray-600">{processingStep}</p>
-            </div>
-          ) : meeting.audio_url ? (
-            <div className="space-y-4">
-              <audio controls className="w-full">
-                <source src={meeting.audio_url} type="audio/mpeg" />
-                Your browser does not support the audio element.
-              </audio>
-              
-              {meeting.transcript && (
-                <div>
-                  <h4 className="text-md font-medium text-gray-900 mb-2">Transcript</h4>
-                  <div className="bg-gray-50 p-4 rounded-md">
-                    <p className="text-sm text-gray-700">{meeting.transcript}</p>
-                  </div>
-                </div>
-              )}
-
-              {meeting.summary && (
-                <div>
-                  <h4 className="text-md font-medium text-gray-900 mb-2">Summary</h4>
-                  <div className="bg-gray-50 p-4 rounded-md">
-                    <p className="text-sm text-gray-700">{meeting.summary}</p>
-                  </div>
-                </div>
-              )}
-
-              {meeting.sentimentEvents && meeting.sentimentEvents.length > 0 && (
-                <div>
-                  <h4 className="text-md font-medium text-gray-900 mb-2">Sentiment Events</h4>
-                  <div className="overflow-x-auto">
-                    <table className="min-w-full divide-y divide-gray-200">
-                      <thead className="bg-gray-50">
-                        <tr>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                            Time
-                          </th>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                            Event
-                          </th>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                            Sentiment
-                          </th>
-                        </tr>
-                      </thead>
-                      <tbody className="bg-white divide-y divide-gray-200">
-                        {meeting.sentimentEvents.map((event, index) => (
-                          <tr key={index}>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                              {event.timestamp}
-                            </td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                              {event.event}
-                            </td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                              {event.sentiment}%
-                            </td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              )}
-            </div>
+        <div>
+          <h3 className="text-sm font-medium text-gray-500">Description</h3>
+          {isEditing ? (
+            <textarea
+              value={editedMeeting?.description || ''}
+              onChange={(e) => setEditedMeeting(prev => prev ? { ...prev, description: e.target.value } : null)}
+              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+              rows={3}
+            />
           ) : (
-            <div className="border-2 border-dashed border-gray-300 rounded-lg p-12 text-center">
-              <Upload className="mx-auto h-12 w-12 text-gray-400" />
-              <p className="mt-2 text-sm text-gray-500">Upload audio recording</p>
-              <input
-                type="file"
-                accept="audio/*"
-                className="hidden"
-                id="audio-upload"
-                onChange={handleFileUpload}
-              />
-              <label
-                htmlFor="audio-upload"
-                className="mt-2 inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 cursor-pointer"
-              >
-                Select File
-              </label>
-            </div>
+            <p className="mt-1 text-sm text-gray-900">{meeting.description}</p>
           )}
         </div>
       </div>
+
+      {meeting.audio_url ? (
+        <div className="mt-6">
+          <h3 className="text-sm font-medium text-gray-500">Audio Recording</h3>
+          <div className="mt-2">
+            <audio controls className="w-full">
+              <source src={meeting.audio_url} type="audio/mpeg" />
+              Your browser does not support the audio element.
+            </audio>
+          </div>
+        </div>
+      ) : (
+        <div className="mt-6">
+          <h3 className="text-sm font-medium text-gray-500">Upload Audio Recording</h3>
+          <div className="mt-2">
+            <label className="block">
+              <span className="sr-only">Choose audio file</span>
+              <input
+                type="file"
+                accept="audio/*"
+                className="block w-full text-sm text-gray-500
+                  file:mr-4 file:py-2 file:px-4
+                  file:rounded-md file:border-0
+                  file:text-sm file:font-semibold
+                  file:bg-blue-50 file:text-blue-700
+                  hover:file:bg-blue-100"
+                onChange={(e) => {
+                  const file = e.target.files?.[0];
+                  if (file) handleFileUpload(file);
+                }}
+              />
+            </label>
+          </div>
+        </div>
+      )}
+
+      {renderHighlightedTranscript()}
+
+      {meeting.summary && (
+        <div className="mt-6">
+          <h3 className="text-sm font-medium text-gray-500">Summary</h3>
+          <div className="mt-2 p-4 bg-gray-50 rounded-lg">
+            <p className="text-sm text-gray-900">{meeting.summary}</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
