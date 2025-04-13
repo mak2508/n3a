@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Meeting, MEETING_TYPES } from "../types";
 import { formatDate } from "../utils";
+import { MeetingTranscript } from "./MeetingTranscript";
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8000";
 
 type UploadStatus = {
@@ -582,7 +583,10 @@ export function MeetingDetails({
                   Transcript
                 </h3>
                 <div className="mt-2 bg-gray-50 p-4 rounded-lg border border-gray-200">
-                  <p className="text-sm text-gray-700">{meeting.transcript}</p>
+                  <MeetingTranscript
+                    transcript={meeting.transcript}
+                    sentimentEvents={meeting.sentiment_events}
+                  />
                 </div>
               </div>
             )}
