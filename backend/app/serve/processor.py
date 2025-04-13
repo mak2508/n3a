@@ -2,10 +2,21 @@ import os
 import sys
 import subprocess
 import tempfile
+import datetime
+import json
 
-from .models.openai_models import ModelOpenAI
-from .models.hf_models import ModelHF
-from .models.azure_models import ModelAzure
+# Add path manipulation to ensure proper imports
+current_dir = os.path.dirname(os.path.abspath(__file__))
+app_dir = os.path.abspath(os.path.join(current_dir, '..'))
+if app_dir not in sys.path:
+    sys.path.insert(0, app_dir)
+
+from serve.models.openai_models import ModelOpenAI
+from serve.models.hf_models import ModelHF
+from serve.models.azure_models import ModelAzure
+
+# Import the GraphRAGIndexer from merged file
+from serve.graphRag import GraphRAGIndexer
 
 def initialize_models():
     """Initialize models with warning suppression"""
@@ -139,8 +150,30 @@ def convert_to_wav(input_path):
             os.unlink(wav_path)
         raise ValueError(f"Audio conversion failed: {e.stderr.decode() if e.stderr else str(e)}")
 
-def process_audio(audio_path):
-    """Process audio file through the entire pipeline"""
+def save_transcript_to_file(client_id, transcript, analysis=None):
+    """Save the transcript to a file for RAG indexing"""
+    # Create a timestamp for unique file naming
+    timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+    
+    # Create the transcripts directory if it doesn't exist
+    os.makedirs("./transcripts", exist_ok=True)
+    
+    # Create the transcript file path
+    file_path = f"./transcripts/{client_id}_transcript_{timestamp}.txt"
+    
+    # Prepare the content to save
+    content = transcript
+    if analysis:
+        content += "\n\n--- Analyzed Transcript ---\n\n" + analysis
+    
+    # Write the transcript to the file
+    with open(file_path, "w") as f:
+        f.write(content)
+    
+    return file_path
+
+def process_audio(audio_path, client_id, client_description=None):
+    """Process audio file through the entire pipeline and update client RAG"""
     try:
         initialize_models()
         
@@ -148,11 +181,37 @@ def process_audio(audio_path):
         is_converted = wav_path != audio_path
         
         try:
+            # Process audio
             transcript = audio2text(wav_path)
             audio_events = audio2annotations(wav_path)
             analysis = annotations2analysis(transcript, audio_events)
             dos_donts = analyze_dos_and_donts(analysis)
-            return dos_donts
+            
+            # Save the transcript and analysis to a file
+            transcript_file = save_transcript_to_file(client_id, transcript, analysis)
+            
+            # Update the RAG index for this client
+            indexer = GraphRAGIndexer(
+                client_id=client_id,  # Changed from client to client_id to match class definition
+                client_description=client_description
+            )
+            
+            # Initialize workspace if it doesn't exist
+            if not os.path.exists(f"./graphRAG/{client_id}"):
+                indexer.init_workspace()
+            
+            # Add the transcript to the index
+            indexer.update_index(transcript_file)
+            
+            # Add the transcript file path to the results
+            results = {
+                "analysis": analysis,
+                "dos_donts": dos_donts,
+                "transcript_file": transcript_file
+            }
+            
+            return results
+            
         finally:
             if is_converted and os.path.exists(wav_path):
                 os.unlink(wav_path)

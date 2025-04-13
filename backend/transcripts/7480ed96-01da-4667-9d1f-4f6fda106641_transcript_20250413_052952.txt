@@ -1,0 +1,23 @@
+Hey, good afternoon, Mr. Wilson. I reviewed your portfolio and I feel like you build a solid foundation. I want to say just congratulations Thanks, that's good to hear. I've been putting money aside for years. Just hoping it's enough. Oh But based on projections if you retire at 65 your current savings and your investment should give you away a pretty comfortable life, no? Oh, that's a relief Honestly, I've been worried I'd outlive my savings. I understand. Though if health care costs rise or the market dips, then we might have a problem. We might need to make some small adjustments. Adjustments? I thought I was set. No, I'm not so sure. No, no, it's normal to feel that way. But you can always create a flexible plan. Include a caution for those surprises, maybe stack of withdrawals, or adjust your risk exposure a bit. Hmm Okay, that makes sense. I just want to enjoy retirement without constantly worrying, you understand, right? And by all means you will. With the right strategy, your retirement years can be both secure and fulfilling. All right, let's do it.
+
+--- Analyzed Transcript ---
+
+Bank Agent: Hey, good afternoon, Mr. Wilson. I reviewed your portfolio and I feel like you build a solid foundation. [I want to say just congratulations](positive, encouraging).
+
+Mr. Wilson: Thanks, [that's good to hear](positive, relieved). I've been putting money aside for years. [Just hoping it's enough](neutral, hopeful).
+
+Bank Agent: [Oh](neutral, acknowledging). But based on projections if you retire at 65 your current savings and your investment should give you away a pretty comfortable life, no?
+
+Mr. Wilson: [Oh, that's a relief](positive, relieved). [Honestly, I've been worried I'd outlive my savings](negative, anxious).
+
+Bank Agent: [I understand](positive, empathetic). Though if health care costs rise or the market dips, then [we might have a problem](neutral, cautious). [We might need to make some small adjustments](neutral, practical).
+
+Mr. Wilson: [Adjustments?](neutral, questioning) [I thought I was set](negative, doubtful). [No, I'm not so sure](negative, uncertain).
+
+Bank Agent: [No, no, it's normal to feel that way](positive, reassuring). But [you can always create a flexible plan](positive, encouraging). Include a caution for those surprises, maybe stack of withdrawals, or adjust your risk exposure a bit.
+
+Mr. Wilson: [Hmm, Okay, that makes sense](neutral, accepting). [I just want to enjoy retirement without constantly worrying](negative, longing). [You understand, right?](positive, seeking reassurance).
+
+Bank Agent: [And by all means you will](positive, confident). With the right strategy, [your retirement years can be both secure and fulfilling](positive, hopeful).
+
+Mr. Wilson: [All right, let's do it](positive, decisive).

@@ -1,0 +1,1 @@
+from .index import init_workspace, perform_indexing
