@@ -7,7 +7,7 @@ class ClientInsight(BaseModel):
     client_id: str
     category: str
     insight: str
-    source_meeting_id: Optional[str] = None
+    meeting_id: Optional[str] = None
     created_at: datetime
     updated_at: datetime
 

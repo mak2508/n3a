@@ -31,7 +31,7 @@ async def get_clients():
                     client_id=insight["client_id"],
                     category=insight["category"],
                     insight=insight["insight"],
-                    source_meeting_id=insight["source_meeting_id"],
+                    meeting_id=insight["meeting_id"],
                     created_at=insight["created_at"],
                     updated_at=insight["updated_at"]
                 )
@@ -62,7 +62,7 @@ async def get_client(client_id: str):
                 client_id=insight["client_id"],
                 category=insight["category"],
                 insight=insight["insight"],
-                source_meeting_id=insight["source_meeting_id"],
+                meeting_id=insight["meeting_id"],
                 created_at=insight["created_at"],
                 updated_at=insight["updated_at"]
             )

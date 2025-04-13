@@ -63,7 +63,7 @@ export interface ClientInsight extends BaseEntity {
     client_id: string;
     category: string;
     insight: string;
-    source_meeting_id: string | null;
+    meeting_id?: string;
 }
 
 export interface Insight extends BaseEntity {
